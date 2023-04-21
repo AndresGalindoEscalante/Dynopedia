@@ -46,7 +46,6 @@ a {
 
 /* Fin edicion del header     */
 aside {
-    width: 200px;
     display: flex;
     position: fixed;
     font-style: italic;
