@@ -1,0 +1,33 @@
+body{
+    background-image: url("img/fondo.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Edicion de la tabla */
+table{
+    margin-left: 3vw;
+    margin-top: -70vh;
+    border-radius: 40px;
+}
+
+table,th,td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 20px;
+    padding-right: 30px;
+    color: rgb(0, 0, 0);
+}
+
+/* Edicion del boton */
+button{
+    background-color: #ff3030;
+    border-radius: 20px; 
+}
+
+/* Edicion del indice */
+aside{
+    margin-top: 70vh;
+    margin-left: 80vw;
+}
