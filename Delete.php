@@ -23,7 +23,7 @@
 
         public function eliminar($id) {
             // Esta es la consulta sql que elimina en la base de datos segun el id que se le pase por parametro
-            $sql = "DELETE FROM zonas WHERE id = $id;";
+            $sql = "DELETE FROM administrado WHERE id = $id;";
             $conexion=self::conectar();
             // Ejecutar consulta utilizando un objeto PDO
             $resultado = $conexion->query($sql);
@@ -35,5 +35,7 @@
             }
         }
     }
+
+    header('Location: Administrador/index.php');
 
 ?>

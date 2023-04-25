@@ -7,6 +7,7 @@
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
+use dynopedia;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 

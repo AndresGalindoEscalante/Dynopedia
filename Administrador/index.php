@@ -40,7 +40,7 @@ $result = $db->getAll("administrador");
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["nombre"] . "</td>";
       echo "<td>" . $row["nivel"] . "</td>";
-      echo "<td>   <button onclick='myFunction()'>Borrar</button>   </td>";
+      echo "<td>  <a href='../Delete.php?id=".$row["id"]."?tabla=administrador' ><button >Borrar</button> </a> </td>";
       echo "</tr>";
     }
     ?>
