@@ -109,7 +109,6 @@ $result = $db->getAll("dinosaurios_pagina");
             echo "<p> Era: " . $row["era"] . "</p>";
             echo "<p> Familia: " . $row["familia"] . "</p>";
             echo "<p> Region: " . $row["region"] . "</p>";
-
             echo "</div>";
         }
         ?>
