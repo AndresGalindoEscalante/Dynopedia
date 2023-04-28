@@ -1,13 +1,10 @@
 <?php
 require_once('../Database.php');
-require_once('../Delete.php');
 $db = new Database;
-$delete = new Delete();
 $result = $db->getAll("zonas");
 
 
-// Llamar al método eliminar con el ID del registro que deseas eliminar
-$resultado = $delete->eliminar(6);
+
 ?>
 
 
@@ -47,16 +44,12 @@ $resultado = $delete->eliminar(6);
       echo "<td>" . $row["clima"] . "</td>";
       echo "<td>" . $row["region"] . "</td>";
       echo "<td>";
-      echo "<form method='POST' action='Delete.php'>";
-      echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
-      echo "<button type='submit' name='eliminar'>Eliminar</button>";
-      echo "</form>";
+      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Zonas/index.php&tabla=zonas'><button>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
   </table>
-
 </body>
 
 </html>

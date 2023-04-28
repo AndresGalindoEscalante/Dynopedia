@@ -1,7 +1,7 @@
 <?php
-    class Delete {
+    
 
-        public function conectar()
+         function conectar()
         {
             $driver = "mysql";
             $host = 'localhost';
@@ -21,10 +21,10 @@
             return $gbd;
         }
 
-        public function eliminar($id) {
+         function eliminar($id,$tabla) {
             // Esta es la consulta sql que elimina en la base de datos segun el id que se le pase por parametro
-            $sql = "DELETE FROM administrado WHERE id = $id;";
-            $conexion=self::conectar();
+            $sql = "DELETE FROM $tabla WHERE id = $id;";
+            $conexion=conectar();
             // Ejecutar consulta utilizando un objeto PDO
             $resultado = $conexion->query($sql);
             // Comprobar si se ha eliminado correctamente el registro
@@ -34,8 +34,9 @@
                 return "No se pudo eliminar el registro";
             }
         }
-    }
-
-    header('Location: Administrador/index.php');
-
-?>
+    
+    $id= $_GET["id"] ;
+    $pagina= $_GET["pagina"] ;
+    $tabla= $_GET["tabla"] ;
+    eliminar($id,$tabla);
+    header('Location: '.$pagina);

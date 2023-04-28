@@ -37,7 +37,9 @@ $result = $db->getAll("familias");
       echo "<tr>";
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["nombre"] . "</td>";
-      echo "<td>   <button onclick='myFunction()'>Borrar</button>   </td>";
+      echo "<td>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Familias/index.php&tabla=familias'><button>Borrar</button></a>";
+      echo "</td>";
       echo "</tr>";
     }
     ?>

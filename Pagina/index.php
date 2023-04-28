@@ -41,7 +41,9 @@ $result = $db->getAll("pagina");
       echo "<td>" . $row["fecha_creacion"] . "</td>";
       echo "<td>" . $row["tipo"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
-      echo "<td>   <button onclick='myFunction()'>Borrar</button>   </td>";
+      echo "<td>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Pagina/index.php&tabla=pagina'><button>Borrar</button></a>";
+      echo "</td>";
       echo "</tr>";
     }
     ?>

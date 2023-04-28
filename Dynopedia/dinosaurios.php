@@ -1,8 +1,6 @@
 <?php
 require_once('../Database.php');
-require_once('../Delete.php');
 $db = new Database;
-$delete = new Delete();
 $result = $db->getAll("dinosaurios_pagina");
 ?>
 
@@ -27,9 +25,9 @@ $result = $db->getAll("dinosaurios_pagina");
             flex-wrap: wrap;
         }
 
-        img{
-            height:20vh;
-            width:20vw;
+        img {
+            height: 20vh;
+            width: 20vw;
         }
     </style>
 </head>
@@ -106,16 +104,21 @@ $result = $db->getAll("dinosaurios_pagina");
         while ($row = $result->fetch()) {
 
             echo "<div>";
-            echo "<img src='img/".$row["imagen"]."'></img>";
+            echo "<img src='img/" . $row["imagen"] . "'></img>";
             echo "<h3> Nombre: " . $row["nombre"] . "</h3>";
             echo "<p> Era: " . $row["era"] . "</p>";
             echo "<p> Familia: " . $row["familia"] . "</p>";
             echo "<p> Region: " . $row["region"] . "</p>";
-            
+
             echo "</div>";
         }
         ?>
     </main>
+    <form action="/action_page.php">
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <input type="submit">
+    </form>
 </body>
 
 </html>
