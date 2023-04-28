@@ -42,7 +42,8 @@ $result = $db->getAll("usuario_editor_has_pagina");
       echo "<td>" . $row["contrasena"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
       echo "<td>";
-      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor_has_pagina/index.php&tabla=usuario_editor_has_pagina'><button>Borrar</button></a>";
+      echo " <a href='create.php'><button class='insertar'>Insertar</button></a>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor_has_pagina/index.php&tabla=usuario_editor_has_pagina'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }

@@ -38,7 +38,8 @@ $result = $db->getAll("familias");
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["nombre"] . "</td>";
       echo "<td>";
-      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Familias/index.php&tabla=familias'><button>Borrar</button></a>";
+      echo " <a href='create.php'><button class'insertar'>Insertar</button></a>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Familias/index.php&tabla=familias'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
