@@ -1,7 +1,7 @@
 <?php
-    
+    class Insert {
 
-         function conectar()
+        public function conectar()
         {
             $driver = "mysql";
             $host = 'localhost';
@@ -21,22 +21,19 @@
             return $gbd;
         }
 
-         function eliminar($id,$tabla) {
-            // Esta es la consulta sql que elimina en la base de datos segun el id que se le pase por parametro
-            $sql = "DELETE FROM $tabla WHERE id = $id;";
-            $conexion=conectar();
+        public function insertar($nombre, $nivel) {
+            // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
+            $sql = "INSERT INTO administrador VALUES(null, $nombre, $nivel)";
+            $conexion=self::conectar();
             // Ejecutar consulta utilizando un objeto PDO
             $resultado = $conexion->query($sql);
-            // Comprobar si se ha eliminado correctamente el registro
+            // Comprobar si se ha insertado correctamente el registro
             if ($resultado !== false) {
-                return "Registro eliminado correctamente";
+                return "Registro insertado correctamente";
             } else {
-                return "No se pudo eliminar el registro";
+                return "No se pudo insertar el registro";
             }
         }
-    
-    $id= $_GET["id"] ;
-    $pagina= $_GET["pagina"] ;
-    $tabla= $_GET["tabla"] ;
-    eliminar($id,$tabla);
-    header('Location: '.$pagina);
+    }
+
+?>
