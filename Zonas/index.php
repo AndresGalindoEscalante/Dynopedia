@@ -46,12 +46,6 @@ $resultado = $delete->eliminar(6);
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["clima"] . "</td>";
       echo "<td>" . $row["region"] . "</td>";
-      echo "<td>";
-      echo "<form method='POST' action='Delete.php'>";
-      echo "<input type='hidden' name='id' value='" . $row["id"] . "'>";
-      echo "<button type='submit' name='eliminar'>Eliminar</button>";
-      echo "</form>";
-      echo "</td>";
       echo "</tr>";
     }
     ?>

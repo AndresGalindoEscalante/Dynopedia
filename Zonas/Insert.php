@@ -1,5 +1,5 @@
 <?php
-    class Delete {
+    class Insert {
 
         public function conectar()
         {
@@ -21,21 +21,17 @@
             return $gbd;
         }
 
-        public function eliminar($id) {
-            // Esta es la consulta sql que elimina en la base de datos segun el id que se le pase por parametro
-            $sql = "DELETE FROM administrador WHERE id = $id;";
+        public function insertar($clima, $region) {
+            // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
+            $sql = "INSERT INTO zonas VALUES(null, $clima, $region)";
             $conexion=self::conectar();
             // Ejecutar consulta utilizando un objeto PDO
             $resultado = $conexion->query($sql);
-            // Comprobar si se ha eliminado correctamente el registro
+            // Comprobar si se ha insertado correctamente el registro
             if ($resultado !== false) {
-                return "Registro eliminado correctamente";
+                return "Registro insertado correctamente";
             } else {
-                return "No se pudo eliminar el registro";
+                return "No se pudo insertar el registro";
             }
         }
     }
-
-    //header('Location: Administrador/index.php');
-
-?>
