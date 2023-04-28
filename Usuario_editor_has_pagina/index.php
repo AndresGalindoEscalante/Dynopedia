@@ -35,12 +35,8 @@ $result = $db->getAll("usuario_editor_has_pagina");
     <?php
     while ($row = $result->fetch()) {
       echo "<tr>";
-      echo "<td>" . $row["id"] . "</td>";
-      echo "<td>" . $row["nombre"] . "</td>";
-      echo "<td>" . $row["apellido"] . "</td>";
-      echo "<td>" . $row["correo"] . "</td>";
-      echo "<td>" . $row["contrasena"] . "</td>";
-      echo "<td>" . $row["administrador_id"] . "</td>";
+      echo "<td>" . $row["usuario_editor_id"] . "</td>";
+      echo "<td>" . $row["pagina_id"] . "</td>";
       echo "<td>";
       echo " <a href='create.php'><button class='insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor_has_pagina/index.php&tabla=usuario_editor_has_pagina'><button class'borrar'>Borrar</button></a>";
