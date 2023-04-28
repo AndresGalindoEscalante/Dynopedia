@@ -45,7 +45,9 @@ $result = $db->getAll("dinosaurios");
       echo "<td>" . $row["pagina_id"] . "</td>";
       echo "<td>" . $row["familias_id"] . "</td>";
       echo "<td>" . $row["zonas_id"] . "</td>";
-      echo "<td>  <button onclick='myFunction()'>Borrar</button>  </td>";
+      echo "<td>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Dinosaurios/index.php&tabla=dinosaurios'><button>Borrar</button></a>";
+      echo "</td>";
       echo "</tr>";
     }
     ?>

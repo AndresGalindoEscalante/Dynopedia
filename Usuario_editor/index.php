@@ -45,7 +45,9 @@ $result = $db->getAll("usuario_editor");
       echo "<td>" . $row["correo"] . "</td>";
       echo "<td>" . $row["contrasena"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
-      echo "<td>   <button onclick='myFunction()'>Borrar</button>   </td>";
+      echo "<td>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor/index.php&tabla=usuario_editor'><button>Borrar</button></a>";
+      echo "</td>";
       echo "</tr>";
     }
     ?>
