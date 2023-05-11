@@ -40,3 +40,5 @@
     $tabla= $_GET["tabla"] ;
     eliminar($id,$tabla);
     header('Location: '.$pagina);
+
+    ?>
