@@ -38,7 +38,7 @@ $result = $db->getAll("usuario_editor_has_pagina");
       echo "<td>" . $row["usuario_editor_id"] . "</td>";
       echo "<td>" . $row["pagina_id"] . "</td>";
       echo "<td>";
-      echo " <a href='create.php'><button class='insertar'>Insertar</button></a>";
+      echo " <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor_has_pagina/index.php&tabla=usuario_editor_has_pagina'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";

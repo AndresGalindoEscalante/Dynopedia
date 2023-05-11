@@ -1,21 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 21-04-2023 a las 18:58:30
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.4.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-05-2023 a las 17:24:31
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
-use dynopedia;
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `dynopedia`
@@ -27,12 +27,11 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `administrador`
 --
 
-CREATE TABLE IF NOT EXISTS `administrador` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `administrador` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `nivel` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+  `nivel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -49,56 +48,35 @@ INSERT INTO `administrador` (`id`, `nombre`, `nivel`) VALUES
 -- Estructura de tabla para la tabla `dinosaurios`
 --
 
-CREATE TABLE IF NOT EXISTS `dinosaurios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `dinosaurios` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `era` varchar(50) DEFAULT NULL,
   `pagina_id` int(11) DEFAULT NULL,
   `familias_id` int(11) DEFAULT NULL,
-  `zonas_id` int(11) DEFAULT NULL,
-  `imagen` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `pagina_id` (`pagina_id`),
-  KEY `familias_id` (`familias_id`),
-  KEY `zonas_id` (`zonas_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `zonas_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `dinosaurios`
 --
 
-INSERT INTO `dinosaurios` (`id`, `nombre`, `era`, `pagina_id`, `familias_id`, `zonas_id`, `imagen`) VALUES
-(1, 'Tyrannosaurus_rex', 'Cretacico', 3, 1, 1, 'Tyrannosaurus_rex.jpg'),
-(2, 'Brachiosaurus', 'Jurasico', 3, 2, 1, 'Brachiosaurus.jpg'),
-(3, 'Anquilosaurio', 'Cretacico', 3, 3, 1, 'Anquilosaurio.jpg'),
-(4, 'Triceratops', 'Cretacico', 3, 4, 1, 'Triceratops.jpg'),
-(5, 'Diplodocus', 'Jurasico', 3, 2, 1, 'Diplodocus.jpg'),
-(6, 'Alosaurio', 'Jurasico', 3, 3, 1, 'Alosaurio.jpg'),
-(7, 'Amargasaurio', 'Cretacico', 3, 4, 3, 'Amargasaurio.jpg');
+INSERT INTO `dinosaurios` (`id`, `nombre`, `era`, `pagina_id`, `familias_id`, `zonas_id`) VALUES
+(1, 'Tyrannosaurus_rex', 'Cretacico', 3, 1, 1),
+(2, 'Brachiosaurus', 'Jurasico', 3, 2, 1),
+(3, 'Anquilosaurio', 'Cretacico', 3, 3, 1),
+(4, 'Triceratops', 'Cretacico', 3, 4, 1);
 
--- --------------------------------------------------------
-
---
--- Estructura Stand-in para la vista `dinosaurios_pagina`
---
-CREATE TABLE IF NOT EXISTS `dinosaurios_pagina` (
-`nombre` varchar(50)
-,`era` varchar(50)
-,`familia` varchar(45)
-,`region` varchar(50)
-,`imagen` varchar(50)
-);
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `familias`
 --
 
-CREATE TABLE IF NOT EXISTS `familias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+CREATE TABLE `familias` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `familias`
@@ -116,14 +94,12 @@ INSERT INTO `familias` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `pagina`
 --
 
-CREATE TABLE IF NOT EXISTS `pagina` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `pagina` (
+  `id` int(11) NOT NULL,
   `fecha_creacion` date NOT NULL,
   `tipo` varchar(50) NOT NULL,
-  `administrador_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `administrador_id` (`administrador_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `administrador_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pagina`
@@ -141,16 +117,14 @@ INSERT INTO `pagina` (`id`, `fecha_creacion`, `tipo`, `administrador_id`) VALUES
 -- Estructura de tabla para la tabla `usuario_editor`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario_editor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuario_editor` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(50) NOT NULL,
   `correo` varchar(45) NOT NULL,
   `contrasena` varchar(45) NOT NULL,
-  `administrador_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `administrador_id` (`administrador_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `administrador_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario_editor`
@@ -168,12 +142,18 @@ INSERT INTO `usuario_editor` (`id`, `nombre`, `apellido`, `correo`, `contrasena`
 -- Estructura de tabla para la tabla `usuario_editor_has_pagina`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario_editor_has_pagina` (
+CREATE TABLE `usuario_editor_has_pagina` (
   `usuario_editor_id` int(11) DEFAULT NULL,
-  `pagina_id` int(11) DEFAULT NULL,
-  KEY `usuario_editor_id` (`usuario_editor_id`),
-  KEY `pagina_id` (`pagina_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pagina_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario_editor_has_pagina`
+--
+
+INSERT INTO `usuario_editor_has_pagina` (`usuario_editor_id`, `pagina_id`) VALUES
+(2, 2),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -181,12 +161,11 @@ CREATE TABLE IF NOT EXISTS `usuario_editor_has_pagina` (
 -- Estructura de tabla para la tabla `zonas`
 --
 
-CREATE TABLE IF NOT EXISTS `zonas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `zonas` (
+  `id` int(11) NOT NULL,
   `clima` varchar(30) DEFAULT NULL,
-  `region` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+  `region` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `zonas`
@@ -201,14 +180,97 @@ INSERT INTO `zonas` (`id`, `clima`, `region`) VALUES
 (6, 'Calido', 'Australia'),
 (7, 'Calido', 'Oceano');
 
--- --------------------------------------------------------
+--
+-- Índices para tablas volcadas
+--
 
 --
--- Estructura para la vista `dinosaurios_pagina`
+-- Indices de la tabla `administrador`
 --
-DROP TABLE IF EXISTS `dinosaurios_pagina`;
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`id`);
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dinosaurios_pagina` AS select `dinosaurios`.`nombre` AS `nombre`,`dinosaurios`.`era` AS `era`,`familias`.`nombre` AS `familia`,`zonas`.`region` AS `region`,`dinosaurios`.`imagen` AS `imagen` from ((`dinosaurios` join `familias` on((`familias`.`id` = `dinosaurios`.`familias_id`))) join `zonas` on((`zonas`.`id` = `dinosaurios`.`zonas_id`)));
+--
+-- Indices de la tabla `dinosaurios`
+--
+ALTER TABLE `dinosaurios`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pagina_id` (`pagina_id`),
+  ADD KEY `familias_id` (`familias_id`),
+  ADD KEY `zonas_id` (`zonas_id`);
+
+--
+-- Indices de la tabla `familias`
+--
+ALTER TABLE `familias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pagina`
+--
+ALTER TABLE `pagina`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `administrador_id` (`administrador_id`);
+
+--
+-- Indices de la tabla `usuario_editor`
+--
+ALTER TABLE `usuario_editor`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `administrador_id` (`administrador_id`);
+
+--
+-- Indices de la tabla `usuario_editor_has_pagina`
+--
+ALTER TABLE `usuario_editor_has_pagina`
+  ADD KEY `usuario_editor_id` (`usuario_editor_id`),
+  ADD KEY `pagina_id` (`pagina_id`);
+
+--
+-- Indices de la tabla `zonas`
+--
+ALTER TABLE `zonas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `dinosaurios`
+--
+ALTER TABLE `dinosaurios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `familias`
+--
+ALTER TABLE `familias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `pagina`
+--
+ALTER TABLE `pagina`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `usuario_editor`
+--
+ALTER TABLE `usuario_editor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `zonas`
+--
+ALTER TABLE `zonas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
@@ -240,6 +302,7 @@ ALTER TABLE `usuario_editor`
 ALTER TABLE `usuario_editor_has_pagina`
   ADD CONSTRAINT `usuario_editor_has_pagina_ibfk_1` FOREIGN KEY (`usuario_editor_id`) REFERENCES `usuario_editor` (`id`),
   ADD CONSTRAINT `usuario_editor_has_pagina_ibfk_2` FOREIGN KEY (`pagina_id`) REFERENCES `usuario_editor` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

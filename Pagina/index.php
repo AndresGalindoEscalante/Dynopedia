@@ -42,7 +42,7 @@ $result = $db->getAll("pagina");
       echo "<td>" . $row["tipo"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
       echo "<td>";
-      echo " <a href='create.php'><button class'insertar'>Insertar</button></a>";
+      echo " <a href='FormularioInsert.php'><button class'insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Pagina/index.php&tabla=pagina'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";

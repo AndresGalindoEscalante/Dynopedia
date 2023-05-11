@@ -1,37 +1,43 @@
 <?php
-    class Insert {
+class Insert
+{
 
-        public function conectar()
-        {
-            $driver = "mysql";
-            $host = 'localhost';
-            $port = '3306';
-            $bd = 'dynopedia';
-            $user = 'root';
-            $password = '';
-    
-            $dsn = "$driver:dbname=$bd;host=$host;port=$port";
-            $gbd=null;
-            try {
-                $gbd = new PDO($dsn, $user, $password);
+    public function conectar()
+    {
+        $driver = "mysql";
+        $host = 'localhost';
+        $port = '3306';
+        $bd = 'dynopedia';
+        $user = 'root';
+        $password = '';
+
+        $dsn = "$driver:dbname=$bd;host=$host;port=$port";
+        $gbd = null;
+        try {
+            $gbd = new PDO($dsn, $user, $password);
             //   echo 'Conectado correctamente'."<br>";
-            } catch (PDOException $e) {
+        } catch (PDOException $e) {
             //    echo 'fallo la conexion: ' . $e->getMessage()."<br>";;
-            }
-            return $gbd;
         }
+        return $gbd;
+    }
 
-        public function insertar($nombre, $apellido, $correo, $contrasena, $administrador_id) {
-            // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
-            $sql = "INSERT INTO usuario_editor VALUES(null, $nombre, $apellido, $correo, $contrasena, $administrador_id)";
-            $conexion=self::conectar();
-            // Ejecutar consulta utilizando un objeto PDO
-            $resultado = $conexion->query($sql);
-            // Comprobar si se ha insertado correctamente el registro
-            if ($resultado !== false) {
-                return "Registro insertado correctamente";
-            } else {
-                return "No se pudo insertar el registro";
-            }
+    public function insertar($nombre, $apellido, $correo, $contrasena, $administrador_id)
+    {
+        // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
+        $sql = "INSERT INTO usuario_editor VALUES(null, :nombre, :apellido, :correo, :contrasena, :administrador_id)";
+        $conexion = self::conectar();
+        $stmt = $conexion->prepare($sql);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+        $stmt->bindParam(':correo', $correo);
+        $stmt->bindParam(':contrasena', $contrasena);
+        $stmt->bindParam(':administrador_id', $administrador_id);
+        $resultado = $stmt->execute();
+        if ($resultado !== false) {
+            echo "<script>alert('Registro insertado correctamente');</script>";
+        } else {
+            echo "<script>alert('No se pudo insertar el registro');</script>";
         }
     }
+}
