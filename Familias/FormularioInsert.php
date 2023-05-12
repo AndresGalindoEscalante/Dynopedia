@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Insertar Familia</title>
     <style>
         @import url(../FormularioStyle.css);
+        /* Importar El fontawesome para la flecha de backeo */
     </style>
 </head>
 
@@ -28,6 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form method="POST" action="">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre"><br>
+
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
+
         <input type="submit" value="Insertar">
     </form>
 </body>

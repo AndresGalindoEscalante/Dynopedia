@@ -16,12 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <html>
+
 <head>
     <title>Insertar Usuario has Editor</title>
     <style>
-        @import url(../FormularioStyle.css);
+    @import url(../FormularioStyle.css);
+    /* Importar El fontawesome para la flecha de backeo */
     </style>
 </head>
+
 <body>
     <h1>Insertar Usuario has Editor</h1>
     <form method="POST" action="">
@@ -40,7 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="administrador_id">ID del Administrador:</label>
         <input type="text" name="administrador_id"><br>
 
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
+
         <input type="submit" value="Insertar">
     </form>
 </body>
+
 </html>
