@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $insert = new Insert();
     $resultado = $insert->insertar($nombre, $apellido, $correo, $contrasena, $administrador_id);
     echo $resultado;
+    header('Location: index.php');
 }
 ?>
 

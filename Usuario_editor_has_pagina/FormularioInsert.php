@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $insert = new Insert();
     $resultado = $insert->insertar($usuario_editor_id, $pagina_id);
     echo $resultado;
+    header('Location: index.php');
 }
 ?>
 

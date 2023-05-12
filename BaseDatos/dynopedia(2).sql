@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 21-04-2023 a las 18:58:30
+-- Tiempo de generación: 12-05-2023 a las 07:42:31
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   `nombre` varchar(30) NOT NULL,
   `nivel` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `administrador`
@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `administrador` (
 INSERT INTO `administrador` (`id`, `nombre`, `nivel`) VALUES
 (1, 'Andres', 1),
 (2, 'Javier', 1),
-(3, 'Stephen Hawkings', 2);
+(3, 'Stephen Hawkings', 2),
+(6, 'as', 1);
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `dinosaurios` (
   KEY `pagina_id` (`pagina_id`),
   KEY `familias_id` (`familias_id`),
   KEY `zonas_id` (`zonas_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `dinosaurios`
@@ -72,8 +73,7 @@ INSERT INTO `dinosaurios` (`id`, `nombre`, `era`, `pagina_id`, `familias_id`, `z
 (3, 'Anquilosaurio', 'Cretacico', 3, 3, 1, 'Anquilosaurio.jpg'),
 (4, 'Triceratops', 'Cretacico', 3, 4, 1, 'Triceratops.jpg'),
 (5, 'Diplodocus', 'Jurasico', 3, 2, 1, 'Diplodocus.jpg'),
-(6, 'Alosaurio', 'Jurasico', 3, 3, 1, 'Alosaurio.jpg'),
-(7, 'Amargasaurio', 'Cretacico', 3, 4, 3, 'Amargasaurio.jpg');
+(6, 'Alosaurio', 'Jurasico', 3, 3, 1, 'Alosaurio.jpg');
 
 -- --------------------------------------------------------
 
@@ -173,6 +173,13 @@ CREATE TABLE IF NOT EXISTS `usuario_editor_has_pagina` (
   KEY `usuario_editor_id` (`usuario_editor_id`),
   KEY `pagina_id` (`pagina_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario_editor_has_pagina`
+--
+
+INSERT INTO `usuario_editor_has_pagina` (`usuario_editor_id`, `pagina_id`) VALUES
+(1, 2);
 
 -- --------------------------------------------------------
 

@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $insert = new Insert();
     $resultado = $insert->insertar($fechaCreacion, $tipo, $administrador_id, $familias_id, $zonas_id);
     echo $resultado;
+    header('Location: index.php');
 }
 ?>
 
