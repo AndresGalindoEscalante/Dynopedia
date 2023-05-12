@@ -41,12 +41,16 @@ $result = $db->getAll("administrador");
       echo "<td>" . $row["nombre"] . "</td>";
       echo "<td>" . $row["nivel"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Administrador/index.php&tabla=administrador'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
+     <tr>
+      <td colspan=7>
+      <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
+      </td>
+    </tr>
   </table>
 </body>
 

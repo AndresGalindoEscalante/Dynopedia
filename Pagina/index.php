@@ -7,7 +7,6 @@ $result = $db->getAll("pagina");
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,12 +19,12 @@ $result = $db->getAll("pagina");
 </head>
 
 <body>
-<aside>
-        <ul>
-          <a href="../index.php">
-            <li>Índice</li>
-          </a>
-        </ul>
+  <aside>
+    <ul>
+      <a href="../index.php">
+        <li>Índice</li>
+      </a>
+    </ul>
   </aside>
   <table>
     <tr>
@@ -42,12 +41,17 @@ $result = $db->getAll("pagina");
       echo "<td>" . $row["tipo"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioInsert.php'><button class'insertar'>Insertar</button></a>";
-      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Pagina/index.php&tabla=pagina'><button class'borrar'>Borrar</button></a>";
+      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Pagina/index.php&tabla=pagina'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
+    <tr>
+      <td colspan=7>
+        <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
+      </td>
+    </tr>
+
   </table>
 </body>
 

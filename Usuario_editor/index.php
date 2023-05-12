@@ -20,12 +20,12 @@ $result = $db->getAll("usuario_editor");
 </head>
 
 <body>
-<aside>
-        <ul>
-          <a href="../index.php">
-            <li>Índice</li>
-          </a>
-        </ul>
+  <aside>
+    <ul>
+      <a href="../index.php">
+        <li>Índice</li>
+      </a>
+    </ul>
   </aside>
   <table>
     <tr>
@@ -46,14 +46,18 @@ $result = $db->getAll("usuario_editor");
       echo "<td>" . $row["contrasena"] . "</td>";
       echo "<td>" . $row["administrador_id"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioInsert.php'><button class'insertar'>Insertar</button></a>";
-      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Usuario_editor/index.php&tabla=usuario_editor'><button class='borrar'>Borrar</button></a>";
+      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Usuario_editor/index.php&tabla=usuario_editor'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
+    <tr>
+      <td colspan=7>
+        <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
+      </td>
+    </tr>
   </table>
-  
+
 </body>
 
 </html>

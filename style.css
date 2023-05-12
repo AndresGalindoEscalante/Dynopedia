@@ -26,6 +26,10 @@ button{
     border-radius: 20px; 
 }
 
+.insertar{
+    background-color: green;
+}
+
 /* Edicion del indice */
 aside{
     margin-top: 0vh;

@@ -41,12 +41,17 @@ $result = $db->getAll("zonas");
       echo "<td>" . $row["clima"] . "</td>";
       echo "<td>" . $row["region"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Zonas/index.php&tabla=zonas'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
+    <tr>
+      <td colspan=7>
+        <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
+      </td>
+    </tr>
+
   </table>
 </body>
 

@@ -46,12 +46,17 @@ $result = $db->getAll("dinosaurios");
       echo "<td>" . $row["familias_id"] . "</td>";
       echo "<td>" . $row["zonas_id"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Dinosaurios/index.php&tabla=dinosaurios'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
+     <tr>
+      <td colspan=7>
+      <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
+      </td>
+    </tr>
+
   </table>
 
 </body>
