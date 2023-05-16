@@ -44,6 +44,7 @@ $result = $db->getAll("administrador");
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Administrador/index.php&tabla=administrador'><button class'borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
+      
     }
     ?>
      <tr>
