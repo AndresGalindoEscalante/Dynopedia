@@ -7,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pagina_id = $_POST['pagina_id'];
     $familias_id = $_POST['familias_id'];
     $zonas_id = $_POST['zonas_id'];
-    $imagen= $_FILES['imagen'];
+    $imagen = $_FILES['imagen'];
     echo $imagen;
     $insert = new Insert();
-    $resultado = $insert->insertar($nombre, $era, $pagina_id, $familias_id, $zonas_id,$imagen);
+    $resultado = $insert->insertar($nombre, $era, $pagina_id, $familias_id, $zonas_id, $imagen);
     // copy($imagen, '../Dynopedia/img');
 }
 ?>
@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Insertar dinosaurio</title>
     <style>
         @import url(../FormularioStyle.css);
+        /* Importar El fontawesome para la flecha de backeo */
     </style>
 </head>
 
@@ -48,6 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="imagen">Imagen del dinosaurio</label><br>
         <input type="file" name="imagen" accept="image/*" id="imagen"><br>
         <br>
+
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
 
         <a href="../Dynopedia/img/"></a>
         <input type="submit" value="Insertar" onclick="guardarImagen()">

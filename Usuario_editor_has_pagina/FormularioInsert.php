@@ -8,16 +8,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $insert = new Insert();
     $resultado = $insert->insertar($usuario_editor_id, $pagina_id);
     echo $resultado;
+    header('Location: index.php');
 }
 ?>
 
 <html>
+
 <head>
     <title>Insertar Usuario Editor has Pagina</title>
     <style>
-        @import url(../FormularioStyle.css);
+    @import url(../FormularioStyle.css);
+    /* Importar El fontawesome para la flecha de backeo */
     </style>
 </head>
+
 <body>
     <h1>Insertar Usuario Editor has Pagina</h1>
     <form method="POST" action="">
@@ -27,7 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="pagina_id">ID de página:</label>
         <input type="text" name="pagina_id"><br>
 
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
+
         <input type="submit" value="Insertar">
     </form>
 </body>
+
 </html>

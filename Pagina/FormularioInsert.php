@@ -8,18 +8,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     $insert = new Insert();
-    $resultado = $insert->insertar($fechaCreacion, $tipo, $administrador_id, $familias_id, $zonas_id);
+    $resultado = $insert->insertar($fechaCreacion, $tipo, $administrador_id);
     echo $resultado;
+    header('Location: index.php');
 }
 ?>
 
 <html>
+
 <head>
     <title>Insertar Pagina</title>
     <style>
         @import url(../FormularioStyle.css);
+        /* Importar El fontawesome para la flecha de backeo */
     </style>
 </head>
+
 <body>
     <h1>Insertar Pagina</h1>
     <form method="POST" action="">
@@ -32,7 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="administrador_id">Administrador ID:</label>
         <input type="text" name="administrador_id"><br>
 
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
+
         <input type="submit" value="Insertar">
     </form>
 </body>
+
 </html>
