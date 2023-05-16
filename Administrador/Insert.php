@@ -22,6 +22,7 @@ class Insert
         return $gbd;
     }
 
+    
     public function insertar($nombre, $nivel)
     {
         // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
