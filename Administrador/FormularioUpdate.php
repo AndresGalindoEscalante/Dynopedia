@@ -25,8 +25,14 @@ $admin = $db->getElementById("administrador", $id);
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre" value="<?php echo $admin['nombre'] ?>"><br>
 
-        <label for="era">Nivel:</label>
-        <input type="text" name="nivel" value="<?php echo $admin['nivel'] ?>"><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" value="<?php echo $admin['apellido'] ?>"><br>
+
+        <label for="correo">Correo:</label>
+        <input type="text" name="correo" value="<?php echo $admin['correo'] ?>"><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="text" name="contrasena" value="<?php echo $admin['contraseña'] ?>"><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>

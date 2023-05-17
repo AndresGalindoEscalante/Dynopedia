@@ -1,12 +1,13 @@
 <?php
 require_once('../Database.php');
 $db = new Database;
-$result = $db->getAll("pagina");
+$result = $db->getAll("usuario");
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,19 +30,23 @@ $result = $db->getAll("pagina");
   <table>
     <tr>
       <th>Id</th>
-      <th>Fecha_creacion</th>
-      <th>Tipo</th>
-      <th>Administrador_id</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Correo</th>
+      <th>Contraseña</th>
+      <th>Rol</th>
     </tr>
     <?php
     while ($row = $result->fetch()) {
       echo "<tr>";
       echo "<td>" . $row["id"] . "</td>";
-      echo "<td>" . $row["fecha_creacion"] . "</td>";
-      echo "<td>" . $row["tipo"] . "</td>";
-      echo "<td>" . $row["administrador_id"] . "</td>";
+      echo "<td>" . $row["nombre"] . "</td>";
+      echo "<td>" . $row["apellido"] . "</td>";
+      echo "<td>" . $row["correo"] . "</td>";
+      echo "<td>" . $row["contrasena"] . "</td>";
+      echo "<td>" . $row["rol"] . "</td>";
       echo "<td>";
-      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Pagina/index.php&tabla=pagina'><button class'borrar'>Borrar</button></a>";
+      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Usuario/index.php&tabla=usuario'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
@@ -51,8 +56,8 @@ $result = $db->getAll("pagina");
         <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
       </td>
     </tr>
-
   </table>
+
 </body>
 
 </html>

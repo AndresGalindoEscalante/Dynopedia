@@ -22,14 +22,18 @@ class Insert
         return $gbd;
     }
 
-    public function insertar($usuario_editor_id, $pagina_id)
+    public function insertar($nombre, $apellido, $correo, $contrasena, $rol)
     {
         // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
-        $sql = "INSERT INTO usuario_editor_has_pagina VALUES(:usuario_editor_id, :pagina_id)";
+        $sql = "INSERT INTO usuario VALUES(null, :nombre, :apellido, :correo, :contrasena, :rol)";
+
         $conexion = self::conectar();
         $stmt = $conexion->prepare($sql);
-        $stmt->bindParam(':usuario_editor_id', $usuario_editor_id);
-        $stmt->bindParam(':pagina_id', $pagina_id);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellido', $apellido);
+        $stmt->bindParam(':correo', $correo);
+        $stmt->bindParam(':contrasena', $contrasena);
+        $stmt->bindParam(':rol', $rol);
         $resultado = $stmt->execute();
         if ($resultado !== false) {
             echo "<script>alert('Registro insertado correctamente');</script>";

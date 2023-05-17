@@ -35,20 +35,8 @@
     </ul>
 
     <ul>
-      <a href="Pagina/index.php">
-        <li>Pagina</li>
-      </a>
-    </ul>
-
-    <ul>
-      <a href="Usuario_editor/index.php">
-        <li>Usuario_editor</li>
-      </a>
-    </ul>
-
-    <ul>
-      <a href="Usuario_editor_has_pagina/index.php">
-        <li>Usuario_editor_has_pagina</li>
+      <a href="Usuario/index.php">
+        <li>Usuario</li>
       </a>
     </ul>
 

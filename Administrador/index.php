@@ -32,14 +32,18 @@ $result = $db->getAll("administrador");
     <tr>
       <th>Id</th>
       <th>Nombre</th>
-      <th>Nivel</th>
+      <th>Apellido</th>
+      <th>Correo</th>
+      <th>Contraseña</th>
     </tr>
     <?php
     while ($row = $result->fetch()) {
       echo "<tr>";
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["nombre"] . "</td>";
-      echo "<td>" . $row["nivel"] . "</td>";
+      echo "<td>" . $row["apellido"] . "</td>";
+      echo "<td>" . $row["correo"] . "</td>";
+      echo "<td>" . $row["contraseña"] . "</td>";
       echo "<td>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Administrador/index.php&tabla=administrador'><button class'borrar'>Borrar</button></a>";
       echo "</td>";

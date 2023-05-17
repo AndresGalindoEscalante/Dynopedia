@@ -26,11 +26,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Insertar Administrador</h1>
     <form method="POST" action="">
-        <label for="nombre">Nombre:</label>
+    <label for="nombre">Nombre:</label>
         <input type="text" name="nombre"><br>
 
-        <label for="era">Nivel:</label>
-        <input type="text" name="nivel"><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido"><br>
+
+        <label for="correo">Correo:</label>
+        <input type="text" name="correo"><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="text" name="contrasena"><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>

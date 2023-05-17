@@ -6,10 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $apellido = $_POST['apellido'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
-    $administrador_id = $_POST['administrador_id'];
+    $rol = $_POST['rol'];
 
     $insert = new Insert();
-    $resultado = $insert->insertar($nombre, $apellido, $correo, $contrasena, $administrador_id);
+    $resultado = $insert->insertar($nombre, $apellido, $correo, $contrasena, $rol);
     echo $resultado;
     header('Location: index.php');
 }
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 
 <head>
-    <title>Insertar Usuario has Editor</title>
+    <title>Insertar Usuario</title>
     <style>
     @import url(../FormularioStyle.css);
     /* Importar El fontawesome para la flecha de backeo */
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-    <h1>Insertar Usuario has Editor</h1>
+    <h1>Insertar Usuario</h1>
     <form method="POST" action="">
         <label for="nombre">Nombre:</label>
         <input type="text" name="nombre"><br>
@@ -40,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="contrasena">Contraseña:</label>
         <input type="text" name="contrasena"><br>
 
-        <label for="administrador_id">ID del Administrador:</label>
-        <input type="text" name="administrador_id"><br>
+        <label for="rol">Rol:</label>
+        <input type="text" name="rol"><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>
