@@ -35,6 +35,7 @@ $result = $db->getAll("dinosaurios");
       <th>Pagina_id</th>
       <th>Familias_id</th>
       <th>Zonas_id</th>
+      <th>Direccion Imagen</th>
     </tr>
     <?php
     while ($row = $result->fetch()) {
@@ -45,14 +46,16 @@ $result = $db->getAll("dinosaurios");
       echo "<td>" . $row["pagina_id"] . "</td>";
       echo "<td>" . $row["familias_id"] . "</td>";
       echo "<td>" . $row["zonas_id"] . "</td>";
+      echo "<td>" . $row["imagen"] . "</td>";
       echo "<td>";
+      echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class'actualizar'>Actualizar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Dinosaurios/index.php&tabla=dinosaurios'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
     ?>
      <tr>
-      <td colspan=7>
+      <td colspan=8>
       <a href='FormularioInsert.php'><button class='insertar'>Insertar</button></a>
       </td>
     </tr>

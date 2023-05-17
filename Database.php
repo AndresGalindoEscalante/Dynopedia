@@ -3,8 +3,6 @@ class Database
 {
     public function conectar()
     {
-
-
         $driver = "mysql";
         $host = 'localhost';
         $port = '3306';
@@ -30,6 +28,20 @@ class Database
         $resultados = $conexion->query($sql);
 
      return $resultados;
+    }
+
+    public function getElementById($tabla,$id){
+        $conexion=self::conectar();
+        $sql = "SELECT * FROM $tabla";
+        $resultados = $conexion->query($sql);
+
+     return $resultados->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function modificacion($sql){
+        $db = new Database();
+        $conexion=  $db->conectar();
+        $conexion->exec($sql);
     }
 }
 ?>

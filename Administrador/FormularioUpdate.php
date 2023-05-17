@@ -1,0 +1,39 @@
+<?php
+require_once("../Database.php");
+$id = $_GET['id'];
+$db = new Database();
+$admin = $db->getElementById("administrador", $id);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(../FormularioStyle.css);
+        /* Importar El fontawesome para la flecha de backeo */
+    </style>
+</head>
+
+<body>
+    <h1>Actualizar Administrador</h1>
+    <form method="POST" action="Update.php?id=<?php echo $id?>">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="<?php echo $admin['nombre'] ?>"><br>
+
+        <label for="era">Nivel:</label>
+        <input type="text" name="nivel" value="<?php echo $admin['nivel'] ?>"><br>
+
+        <div class="enlace">
+            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+        </div>
+
+        <input type="submit" value="Actualizar">
+    </form>
+</body>
+
+</html>
