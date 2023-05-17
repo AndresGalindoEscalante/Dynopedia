@@ -21,26 +21,25 @@ class Insert
         return $gbd;
     }
 
-    public function insertar($nombre, $era, $pagina_id, $familias_id, $zonas_id,$imagen)
+    public function insertar($nombre, $era, $familias_id, $zonas_id,$imagen)
     {
         // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
-        $sql = "INSERT INTO dinosaurios VALUES(null, :nombre, :era, :pagina_id, :familias_id, :zonas_id,:imagen)";
+        $sql = "INSERT INTO dinosaurios VALUES(null, :nombre, :era, :familias_id, :zonas_id,:imagen)";
         $conexion = self::conectar();
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':era', $era);
-        $stmt->bindParam(':pagina_id', $pagina_id);
         $stmt->bindParam(':familias_id', $familias_id);
         $stmt->bindParam(':zonas_id', $zonas_id);
         $stmt->bindParam(':imagen', $imagen);
         $resultado = $stmt->execute();
-        if ($resultado !== false) {
-            echo "<script>alert('Registro insertado correctamente');</script>";
+        // if ($resultado !== false) {
+        //     echo "<script>alert('Registro insertado correctamente');</script>";
             
-        } else {
-            echo "<script>alert('No se pudo insertar el registro');</script>";
+        // } else {
+        //     echo "<script>alert('No se pudo insertar el registro');</script>";
            
-        }
+        // }
         return $resultado;
     }
 }

@@ -32,7 +32,6 @@ $result = $db->getAll("dinosaurios");
       <th>Id</th>
       <th>Nombre</th>
       <th>Era</th>
-      <th>Pagina_id</th>
       <th>Familias_id</th>
       <th>Zonas_id</th>
       <th>Direccion Imagen</th>
@@ -43,7 +42,6 @@ $result = $db->getAll("dinosaurios");
       echo "<td>" . $row["id"] . "</td>";
       echo "<td>" . $row["nombre"] . "</td>";
       echo "<td>" . $row["era"] . "</td>";
-      echo "<td>" . $row["pagina_id"] . "</td>";
       echo "<td>" . $row["familias_id"] . "</td>";
       echo "<td>" . $row["zonas_id"] . "</td>";
       echo "<td>" . $row["imagen"] . "</td>";

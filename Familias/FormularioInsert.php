@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Insertar Familia</h1>
     <form method="POST" action="">
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre"><br>
+        <input type="text" name="nombre"  ><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>

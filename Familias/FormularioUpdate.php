@@ -2,7 +2,7 @@
 require_once("../Database.php");
 $id = $_GET['id'];
 $db = new Database();
-$admin = $db->getElementById("dinosaurios", $id);
+$familia = $db->getElementById("familias", $id);
 ?>
 
 <!DOCTYPE html>
@@ -20,23 +20,11 @@ $admin = $db->getElementById("dinosaurios", $id);
 </head>
 
 <body>
-    <h1>Actualizar Administrador</h1>
+    <h1>Actualizar Familia</h1>
     <form method="POST" action="Update.php?id=<?php echo $id ?>">
 
         <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $admin['nombre'] ?>"><br>
-
-        <label for="era">Era:</label>
-        <input type="text" name="era" value="<?php echo $admin['era'] ?>"><br>
-
-        <label for="era">Familias_id:</label>
-        <input type="text" name="familias_id" value="<?php echo $admin['familias_id'] ?>"><br>
-
-        <label for="era">Zonas_id:</label>
-        <input type="text" name="zonas_id" value="<?php echo $admin['zonas_id'] ?>"><br>
-
-        <label for="era">Imagen:</label>
-        <input type="text" name="imagen" value="<?php echo $admin['imagen'] ?>"><br>
+        <input type="text" name="nombre" value="<?php echo $familia['nombre'] ?>"><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>

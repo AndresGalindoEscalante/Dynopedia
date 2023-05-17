@@ -2,7 +2,7 @@
 require_once("../Database.php");
 $id = $_GET['id'];
 $db = new Database();
-$admin = $db->getElementById("administrador", $id);
+$user = $db->getElementById("usuario", $id);
 ?>
 
 <!DOCTYPE html>
@@ -20,24 +20,27 @@ $admin = $db->getElementById("administrador", $id);
 </head>
 
 <body>
-    <h1>Actualizar Administrador</h1>
-    <form method="POST" action="Update.php?id=<?php echo $id?>">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $admin['nombre'] ?>"><br>
+    <h1>Actualizar Usuario</h1>
+    <form method="POST" action="Update.php?id=<?php echo $id ?>">
+
+    <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="<?php echo $user['nombre'] ?>"><br>
 
         <label for="apellido">Apellido:</label>
-        <input type="text" name="apellido" value="<?php echo $admin['apellido'] ?>"><br>
+        <input type="text" name="apellido"  value="<?php echo $user['apellido'] ?>"><br>
 
         <label for="correo">Correo:</label>
-        <input type="text" name="correo" value="<?php echo $admin['correo'] ?>"><br>
+        <input type="text" name="correo"  value="<?php echo $user['correo'] ?>"><br>
 
         <label for="contrasena">Contraseña:</label>
-        <input type="text" name="contrasena" value="<?php echo $admin['contraseña'] ?>"><br>
+        <input type="text" name="contrasena"  value="<?php echo $user['contrasena'] ?>"><br>
+
+        <label for="rol">Rol:</label>
+        <input type="text" name="rol"  value="<?php echo $user['rol'] ?>"><br>
 
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>
         </div>
-
         <input type="submit" value="Actualizar">
     </form>
 </body>

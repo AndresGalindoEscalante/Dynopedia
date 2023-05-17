@@ -32,7 +32,7 @@ class Database
 
     public function getElementById($tabla,$id){
         $conexion=self::conectar();
-        $sql = "SELECT * FROM $tabla";
+        $sql = "SELECT * FROM $tabla WHERE id=$id";
         $resultados = $conexion->query($sql);
 
      return $resultados->fetch(PDO::FETCH_ASSOC);

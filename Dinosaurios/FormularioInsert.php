@@ -4,14 +4,13 @@ require_once 'insert.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $era = $_POST['era'];
-    $pagina_id = $_POST['pagina_id'];
     $familias_id = $_POST['familias_id'];
     $zonas_id = $_POST['zonas_id'];
-    $imagen = $_FILES['imagen'];
+    $imagen = $_POST['imagen'];
     echo $imagen;
     $insert = new Insert();
-    $resultado = $insert->insertar($nombre, $era, $pagina_id, $familias_id, $zonas_id, $imagen);
-    // copy($imagen, '../Dynopedia/img');
+    $resultado = $insert->insertar($nombre, $era, $familias_id, $zonas_id, $imagen);
+    header('Location: index.php');
 }
 ?>
 
@@ -37,9 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="era">Era:</label>
         <input type="text" name="era"><br>
 
-        <label for="pagina_id">ID de página:</label>
-        <input type="text" name="pagina_id"><br>
-
         <label for="familias_id">ID de familia:</label>
         <input type="text" name="familias_id"><br>
 
@@ -47,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="zonas_id"><br>
 
         <label for="imagen">Imagen del dinosaurio</label><br>
-        <input type="file" name="imagen" accept="image/*" id="imagen"><br>
+        <input type="text" name="imagen"><br>
         <br>
 
         <div class="enlace">
