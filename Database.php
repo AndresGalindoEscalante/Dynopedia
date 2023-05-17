@@ -39,8 +39,7 @@ class Database
     }
 
     function modificacion($sql){
-        $db = new Database();
-        $conexion=  $db->conectar();
+        $conexion=  self::conectar();
         $conexion->exec($sql);
     }
 }
