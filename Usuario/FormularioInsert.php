@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Insertar Usuario</title>
     <style>
     @import url(../FormularioStyle.css);
-    /* Importar El fontawesome para la flecha de backeo */
+    @import url(../Dynopedia/fontawesome/css/all.min.css);
     </style>
 </head>
 
@@ -44,10 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="rol"><br>
 
         <div class="enlace">
-            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+            <i class="fas fa-arrow-left" onclick="history.back()"></i><br>
         </div>
 
-        <input type="submit" value="Insertar">
+        <input class="enviar" type="submit" value="Insertar">
     </form>
 </body>
 

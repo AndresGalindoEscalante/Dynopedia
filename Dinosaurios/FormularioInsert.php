@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Insertar dinosaurio</title>
     <style>
         @import url(../FormularioStyle.css);
-        /* Importar El fontawesome para la flecha de backeo */
+        @import url(../Dynopedia/fontawesome/css/all.min.css);
     </style>
 </head>
 
@@ -47,11 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br>
 
         <div class="enlace">
-            <i class="fas fa-arrow-left" onclick="history.back()"></i>
+            <i class="fas fa-arrow-left" onclick="history.back()"></i><br>
         </div>
 
         <a href="../Dynopedia/img/"></a>
-        <input type="submit" value="Insertar" onclick="guardarImagen()">
+        <input class="enviar" type="submit" value="Insertar" onclick="guardarImagen()">
     </form>
 
     <!-- <script>
