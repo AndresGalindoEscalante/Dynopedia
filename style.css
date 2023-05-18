@@ -8,7 +8,9 @@ body{
 table{
     margin-left: 3vw;
     margin-top: 0vh;
-    border-radius: 40px;
+   
+    background: linear-gradient(180deg, rgba(174,238,255,1) 0%, rgba(81,236,232,1) 25%, rgba(35,188,207,1) 53%, rgba(15,171,172,1) 77%, rgba(15,149,176,1) 100%);
+
 }
 
 table,th,td {
@@ -17,18 +19,92 @@ table,th,td {
     text-align: center;
     padding: 20px;
     padding-right: 30px;
+    
     color: rgb(0, 0, 0);
 }
 
-/* Edicion del boton */
-button{
-    background-color: #ff3030;
-    border-radius: 20px; 
-}
-
-.insertar{
-    background-color: green;
-}
+/* Estilos generales para los botones */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilo para el botón de "Actualizar" */
+  .actualizar {
+    background-color: #3dd969;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding:2%;
+    width: 100%;;
+  }
+  
+  .actualizar:hover {
+    background-color: #34c85e;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .actualizar:active {
+    background-color: #2fb853;
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  /* Estilo para el botón de "Borrar" */
+  .borrar {
+    background-color: #f04343;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding:2%;
+    width: 100%;;
+  }
+  
+  .borrar:hover {
+    background-color: #d93b3b;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .borrar:active {
+    background-color: #c53333;
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  /* Estilo para el botón de "Insertar" */
+  .insertar {
+    background-color: #0e4371;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding:2%;
+    width: 20%;;
+  }
+  
+  .insertar:hover {
+    background-color: #1a77c2;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .insertar:active {
+    background-color: #196fad;
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  
 
 /* Edicion del indice */
 aside{

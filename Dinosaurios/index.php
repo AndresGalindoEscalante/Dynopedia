@@ -46,7 +46,7 @@ $result = $db->getAll("dinosaurios");
       echo "<td>" . $row["zonas_id"] . "</td>";
       echo "<td>" . $row["imagen"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class'actualizar'>Actualizar</button></a>";
+      echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class='actualizar'>Actualizar</button></a>";
       echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Dinosaurios/index.php&tabla=dinosaurios'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";

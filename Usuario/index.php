@@ -46,7 +46,7 @@ $result = $db->getAll("usuario");
       echo "<td>" . $row["contrasena"] . "</td>";
       echo "<td>" . $row["rol"] . "</td>";
       echo "<td>";
-      echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class'actualizar'>Actualizar</button></a>";
+      echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class='actualizar'>Actualizar</button></a>";
       echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Usuario/index.php&tabla=usuario'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";

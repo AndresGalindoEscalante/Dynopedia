@@ -16,11 +16,6 @@
 
   <aside>
     <h3>Índice</h3>
-    <ul>
-      <a href="Administrador/index.php">
-        <li>Administrador</li>
-      </a>
-    </ul>
 
     <ul>
       <a href="Dinosaurios/index.php">
