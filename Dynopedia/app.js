@@ -4,6 +4,7 @@ let formularioMain = formularios[0];
 
 let formularioMainNombre = formularioMain['elements']['nombre']['value'];
 
+let correcto = true;
 /**
  * Funcion para validar el Nombre en el formulario
  * @param - no
@@ -12,7 +13,6 @@ let formularioMainNombre = formularioMain['elements']['nombre']['value'];
 function validarNombre() {
     console.log("Validar nombre");
     let nombre = formularios[0]['elements']['nombre']['value'];
-    console.log(formularios[0]['elements']['nombre']['value']);
     //Creo la variable mensaje para que me coja el id del html que hace referencia al nombre
     let mensaje = document.getElementById('mensajeNom');
 
@@ -29,6 +29,7 @@ function validarNombre() {
         mensaje.textContent = 'Incorrecto';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -40,7 +41,6 @@ function validarNombre() {
 function validarApellido() {
     console.log("Validar apellido");
     let apellido = formularios[0]['elements']['apellido']['value'];
-    console.log(formularios[0]['elements']['apellido']['value']);
     //Creo la variable mensaje para que me coja el id del html que hace referencia al apellido
     let mensaje = document.getElementById('mensajeAp');
 
@@ -57,6 +57,7 @@ function validarApellido() {
         mensaje.textContent = 'Incorrecto';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -66,13 +67,12 @@ function validarApellido() {
  * @return - no
  */
 function validarEmail() {
+    console.log("Validar email");
     let email = formularios[0]['elements']['email']['value'];
     //Creo la variable mensaje para que me coja el id del html que hace referencia al email
     let mensaje = document.getElementById('mensajeEm');
     // Esta variable la uso para determinar si lo introducido es correcto o incorrecto
-    let correcto = true;
 
-    let expresion = /\S+/g;
 
     if (email.indexOf("@") == -1) {
         //Comprobar que halla una @
@@ -88,9 +88,6 @@ function validarEmail() {
         correcto = false;
     } else if (email.indexOf(".") - email.indexOf("@") <= 2) {
         //esto es para comprobar que entre la @ y el . hay al menos 2 caracteres
-        correcto = false;
-    }else if(expresion.test(email)){
-        //comprueba que si hay un espacio salte el error
         correcto = false;
     };
 
@@ -116,7 +113,6 @@ function validarEmail() {
 function validarContrasena() {
     console.log("Validar contraseña");
     let password = formularios[0]['elements']['password']['value'];
-    console.log(formularios[0]['elements']['password']['value']);
      //Creo la variable mensaje para que me coja el id del html que hace referencia a la contraseña
     let mensaje = document.getElementById('mensajePas');
 
@@ -141,6 +137,7 @@ function validarContrasena() {
         mensaje.textContent = 'La contraseña debe contener min 7 caracteres, min 1 mayuscula, min 2 digitos, min 1 minuscula, min 1 ".-_,="';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -162,7 +159,7 @@ function validarConfirmarContraseña() {
     //Creo la variable mensaje para que me coja el id del html que hace referencia a la segunda contraseña
     let mensaje = document.getElementById('mensajePasC');
 
-    if (password != passwordConf) {
+    if (password.equals(passwordConf)) {
         correcto = false;
     }
 
@@ -176,6 +173,7 @@ function validarConfirmarContraseña() {
         mensaje.textContent = 'Las contraseñas no coinciden';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 

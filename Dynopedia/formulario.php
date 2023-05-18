@@ -35,7 +35,7 @@
             <label for="asunto">Contraseña</label><br>
             <input type="password" name="password" id="password" placeholder="Contraseña"><br>
 
-            <input type="button" name="enviar" value="Enviar datos" />
+            <input id="enviar" type="button" name="enviar" value="Enviar datos" />
 
             <div class="enlace">
                 <i class="fas fa-arrow-left" onclick="history.back()"></i>
@@ -43,7 +43,7 @@
 
             <div>
                 <p>¿No tienes una cuenta?</p>
-                <a href="registro.html">Haz clic aqui para registrarte</a>
+                <a href="registro.php">Haz clic aqui para registrarte</a>
             </div>
         </form>
     </main>
