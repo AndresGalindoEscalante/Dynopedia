@@ -41,6 +41,7 @@ $user = $db->getElementById("usuario", $id);
         <div class="enlace">
             <i class="fas fa-arrow-left" onclick="history.back()"></i>
         </div>
+        
         <input type="submit" value="Actualizar">
     </form>
 </body>

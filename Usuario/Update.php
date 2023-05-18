@@ -7,4 +7,5 @@ $db = new Database();
 echo $sql;
 // exit();
 $db->modificacion($sql);
+
 header('Location: index.php ');
