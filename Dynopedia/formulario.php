@@ -35,7 +35,7 @@
             <label for="asunto">Contraseña</label><br>
             <input type="password" name="password" id="password" placeholder="Contraseña"><br>
 
-            <input class="enviar" type="button" name="enviar" value="Enviar datos" />
+            <input id="enviar" type="button" name="enviar" value="Enviar datos" />
 
             <div class="enlace">
                 <i class="fas fa-arrow-left" onclick="history.back()"></i>

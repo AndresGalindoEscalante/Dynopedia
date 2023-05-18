@@ -29,6 +29,7 @@ function validarNombre() {
         mensaje.textContent = 'Incorrecto';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -56,6 +57,7 @@ function validarApellido() {
         mensaje.textContent = 'Incorrecto';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -135,6 +137,7 @@ function validarContrasena() {
         mensaje.textContent = 'La contraseña debe contener min 7 caracteres, min 1 mayuscula, min 2 digitos, min 1 minuscula, min 1 ".-_,="';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
@@ -156,7 +159,7 @@ function validarConfirmarContraseña() {
     //Creo la variable mensaje para que me coja el id del html que hace referencia a la segunda contraseña
     let mensaje = document.getElementById('mensajePasC');
 
-    if (password != passwordConf) {
+    if (password.equals(passwordConf)) {
         correcto = false;
     }
 
@@ -170,6 +173,7 @@ function validarConfirmarContraseña() {
         mensaje.textContent = 'Las contraseñas no coinciden';
         mensaje.classList.remove('valid');
         mensaje.classList.add('invalid');
+        correcto = false;
     }
 }
 
