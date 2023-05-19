@@ -8,7 +8,6 @@ body{
 table{
     margin-left: 3vw;
     margin-top: 0vh;
-   
     background: linear-gradient(0deg, rgba(28,111,119,1) 0%, rgba(193,235,221,1) 83%, rgba(213,250,233,1) 100%);
 
 }
@@ -40,7 +39,7 @@ table,th,td {
   
   /* Estilo para el botón de "Actualizar" */
   .actualizar {
-    background-color: #3dd969;
+    background-color: #33b758;
     color: white;
     border: none;
     border-radius: 20px;

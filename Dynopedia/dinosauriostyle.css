@@ -102,55 +102,6 @@ main img {
     background-color: rgb(255, 255, 255);
 }
 
-aside {
-    width: 200px;
-    height: 250px;
-    display: flex;
-    position: fixed;
-    font-style: italic;
-    background: linear-gradient(-160deg, rgb(22, 63, 1), rgb(5, 82, 28), rgb(26, 98, 2), rgb(11, 98, 16));
-    border-radius: 10px;
-    margin: 10px;
-    align-self: left;
-    font-size: larger;
-    color: white;
-    text-align: justify;
-    list-style: none;
-}
-
-aside li {
-    border-radius: 30px;
-    padding: 10px;
-}
-
-
-aside li ul {
-    display: none;
-    position: absolute;
-    min-width: 100px;
-    margin-top: -20px;
-}
-
-
-
-aside li:hover>ul {
-    margin-left: 110px;
-    background-color: rgb(13, 88, 6);
-    border-radius: 10px;
-    display: block;
-
-}
-
-aside li ul li {
-    position: relative;
-
-}
-
-aside li ul li ul {
-    right: -140px;
-    margin-top: -20px;
-}
-
 #banner {
     height: 25vh;
     width: 50vw;
