@@ -14,8 +14,8 @@ $result = $db->getAll("dinosaurios_pagina");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import "style.css";
         @import "tierlist.css";
-
         aside {
             height: 300px;
         }
@@ -40,7 +40,7 @@ $result = $db->getAll("dinosaurios_pagina");
                 <a href="index.html">
                     <li>Inicio</li>
                 </a>
-                <a href="formulario.html">
+                <a href="formulario.php">
                     <li>Iniciar Sesión</li>
                 </a>
                 <a href="admin.html">

@@ -28,14 +28,14 @@
     </header>
 
     <main>
-        <form action="#" target="" method="get" name="iniciarsesion">
+        <form action="comprobar.php"  method="post" name="iniciarsesion">
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="email" required>
             <br>
-            <label for="asunto">Contraseña</label><br>
+            <label for="password">Contraseña</label><br>
             <input type="password" name="password" id="password" placeholder="Contraseña"><br>
 
-            <input id="enviar" type="button" name="enviar" value="Enviar datos" />
+            <input id="enviar" type="submit" name="enviar" value="Enviar datos" />
 
             <div class="enlace">
                 <i class="fas fa-arrow-left" onclick="history.back()"></i>

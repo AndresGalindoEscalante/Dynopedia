@@ -38,9 +38,18 @@ class Database
      return $resultados->fetch(PDO::FETCH_ASSOC);
     }
 
-    function modificacion($sql){
+    public function modificacion($sql){
         $conexion=  self::conectar();
         $conexion->exec($sql);
     }
+
+    public function login($email, $pass){
+        $sql = "SELECT * FROM usuario WHERE correo='$email' AND contrasena = '$pass'";
+        $user = self::conectar()->query($sql);
+        if($user != null){
+            return $user->fetch(PDO::FETCH_ASSOC);
+        }
+        return null;
+      }
 }
 ?>

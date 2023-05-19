@@ -1,3 +1,29 @@
+<?php
+
+// 1. Reanudo sesion
+session_start();
+
+if(isset($_SESSION['pepito'])){
+  // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
+  if($_SESSION['pepito']['rol'] == 2){
+    // Correcto compañeros
+  }else if($_SESSION['pepito']['rol'] == 1){
+    header('Location: Dynopedia/index.html');
+  }
+  // }else{
+  //   header('Location: ../auth/login.php');
+  // }
+}
+else{
+  header('Location: Dynopedia/formulario.php');
+}
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
