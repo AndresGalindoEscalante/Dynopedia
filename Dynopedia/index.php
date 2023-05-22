@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 
 <body>
@@ -16,7 +17,8 @@
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
                 <a href="formulario.php">
-                    <li>Iniciar Sesión</li>
+
+                    <li><i class="fas fa-sign-out-alt"></i>Iniciar Sesión</li>
                 </a>
                 <a href="admin.html">
                     <li>Administración</li>
@@ -33,28 +35,50 @@
         <ul>
             <li><a href="dinosaurio.html">Clasificación</a>
                 <ul>
-                    <a href="dinosaurio.html#linkSaurisquios"> <li> Saurisquios</li></a>
-                   <a href="dinosaurio.html#linkOrnitrisquios"> <li>Ornitrisquios</li></a>
+                    <a href="dinosaurio.html#linkSaurisquios">
+                        <li> Saurisquios</li>
+                    </a>
+                    <a href="dinosaurio.html#linkOrnitrisquios">
+                        <li>Ornitrisquios</li>
+                    </a>
                 </ul>
             </li>
 
             <li>Era
                 <ul>
-                    <a href="era.html#cretacico"><li>Cretácico</li></a>
-                    <a href="era.html#jurasico"><li>Jurásico</li></a>
-                    <a href="era.html#triasico"><li>Triásico</li></a>
+                    <a href="era.html#cretacico">
+                        <li>Cretácico</li>
+                    </a>
+                    <a href="era.html#jurasico">
+                        <li>Jurásico</li>
+                    </a>
+                    <a href="era.html#triasico">
+                        <li>Triásico</li>
+                    </a>
                 </ul>
             </li>
             <li>Naturaleza
                 <ul>
-                    <a href="naturaleza.html#habita"><li>Habitas</li></a>
-                    <a href="naturaleza.html#alimentacion"><li>Alimentación</li></a>
-                    <a href="naturaleza.html#crecimiento"><li>Crecimiento y esperenza de vida</li></a>
+                    <a href="naturaleza.html#habita">
+                        <li>Habitas</li>
+                    </a>
+                    <a href="naturaleza.html#alimentacion">
+                        <li>Alimentación</li>
+                    </a>
+                    <a href="naturaleza.html#crecimiento">
+                        <li>Crecimiento y esperenza de vida</li>
+                    </a>
                 </ul>
             </li>
-           <a href="tierlist.html"> <li>Tier list</li></a>
-            <a href="recetas.html#receta"><li>Recetas </li></a>
-            <a href="dinosaurios.php"><li>Dinosaurios</li></a>
+            <a href="tierlist.html">
+                <li>Tier list</li>
+            </a>
+            <a href="recetas.html#receta">
+                <li>Recetas </li>
+            </a>
+            <a href="dinosaurios.php">
+                <li>Dinosaurios</li>
+            </a>
         </ul>
     </aside>
     <main>
@@ -62,7 +86,7 @@
             <img src="img/banner.jpg" id="banner">
             <div class="contenido">
                 <span>
-                    <h2>Bienvenidos a la Dynopedia,  mejor guia de dinosaurios del planeta.</h2>
+                    <h2>Bienvenidos a la Dynopedia, mejor guia de dinosaurios del planeta.</h2>
                 </span>
                 <span>
                     <p>Los dinosaurios fueron un grupo de reptiles que vivieron desde el periodo triásico superior hasta
@@ -110,12 +134,12 @@
             </div>
         </section>
         <section id="tres">
-         <img src="img/larga.jpg">
+            <img src="img/larga.jpg">
         </section>
     </main>
-    <!-- <footer>
+    <footer>
         @Copyright 2022
-    </footer> -->
+    </footer>
 </body>
 
 </html>

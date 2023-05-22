@@ -17,7 +17,7 @@
         <div class="cabecera">
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
-                <a href="index.html">
+                <a href="index.php">
                     <li>Inicio</li>
                 </a>
                 <a href="admin.html">
@@ -28,7 +28,7 @@
     </header>
 
     <main>
-        <form action="comprobar.php"  method="post" name="iniciarsesion">
+        <form action="comprobar.php" method="post" name="iniciarsesion">
             <label for="email">Email</label><br>
             <input type="email" name="email" id="email" placeholder="email" required>
             <br>

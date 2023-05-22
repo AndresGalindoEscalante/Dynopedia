@@ -37,7 +37,7 @@ $result = $db->getAll("dinosaurios_pagina");
         <div class="cabecera">
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
-                <a href="index.html">
+                <a href="index.php">
                     <li>Inicio</li>
                 </a>
                 <a href="formulario.php">

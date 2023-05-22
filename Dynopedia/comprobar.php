@@ -26,7 +26,7 @@ if($respuesta == null){
         // Le llevamos al usuario
         session_start();
         $_SESSION['pepito'] = $respuesta;
-        header('Location: index.html');
+        header('Location: index.php');
     }else{
         // Ir al login
         header('Location: formulario.php');
