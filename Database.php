@@ -11,45 +11,61 @@ class Database
         $password = '';
 
         $dsn = "$driver:dbname=$bd;host=$host;port=$port";
-        $gbd=null;
+        $gbd = null;
         try {
             $gbd = new PDO($dsn, $user, $password);
-        //   echo 'Conectado correctamente'."<br>";
+            //   echo 'Conectado correctamente'."<br>";
         } catch (PDOException $e) {
-        //    echo 'fallo la conexion: ' . $e->getMessage()."<br>";;
+            //    echo 'fallo la conexion: ' . $e->getMessage()."<br>";;
         }
         return $gbd;
     }
-   
+
     public function getAll($tabla)
     {
-        $conexion=self::conectar();
+        $conexion = self::conectar();
         $sql = "SELECT * FROM $tabla";
         $resultados = $conexion->query($sql);
 
-     return $resultados;
+        return $resultados;
     }
 
-    public function getElementById($tabla,$id){
-        $conexion=self::conectar();
+    public function getElementById($tabla, $id)
+    {
+        $conexion = self::conectar();
         $sql = "SELECT * FROM $tabla WHERE id=$id";
         $resultados = $conexion->query($sql);
 
-     return $resultados->fetch(PDO::FETCH_ASSOC);
+        return $resultados->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function modificacion($sql){
-        $conexion=  self::conectar();
+    public function modificacion($sql)
+    {
+        $conexion = self::conectar();
         $conexion->exec($sql);
     }
 
-    public function login($email, $pass){
+    public function login($email, $pass)
+    {
         $sql = "SELECT * FROM usuario WHERE correo='$email' AND contrasena = '$pass'";
         $user = self::conectar()->query($sql);
-        if($user != null){
+        if ($user != null) {
             return $user->fetch(PDO::FETCH_ASSOC);
         }
         return null;
-      }
+    }
+
+    public function obtenerRolUsuario($email)
+    {
+        $sql = "SELECT rol FROM usuario WHERE correo = :email";
+        $stmt = self::conectar()->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($resultado) {
+            return $resultado['rol'];
+        }
+        return null;
+    }
 }
 ?>

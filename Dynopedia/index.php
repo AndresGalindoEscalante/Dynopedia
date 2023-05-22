@@ -1,3 +1,39 @@
+<?php
+// 1. Reanudo sesion
+session_start();
+
+if (isset($_SESSION['pepito'])) {
+    // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
+    if ($_SESSION['pepito']['rol_id'] == 1) {
+        // Correcto compañeros
+    } else if ($_SESSION['pepito']['rol_id'] == 2) {
+        header('Location: ../index.php');
+    }
+} 
+
+// session_start();
+// // 1. Recoger los elementos del formulario de login.php
+// $email = $_POST['email'];
+
+// // 2. Importar clase Database.php
+// require_once('../Database.php');
+
+// // 3. Invocar funcion login de Database.php
+// $database = new Database();
+// $rol = $database->obtenerRolUsuario($email);
+
+
+// // 4. Comprobar contenido de la respuesta
+
+// if ($rol !== null && $rol == 2) {
+//     echo "<a href='admin.html'>";
+//     echo "<li>Administración</li>";
+//     echo "</a>";
+// }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -16,12 +52,15 @@
         <div class="cabecera">
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
+                <a href="#" class="username" id="dropdownMenuLink">
+                    <?php echo $_SESSION['pepito']['nombre'] ?> <i class="fas fa-caret-down"></i>
+                </a>
                 <a href="formulario.php">
 
-                    <li><i class="fas fa-sign-out-alt"></i>Iniciar Sesión</li>
+                    <li><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</li>
                 </a>
-                <a href="admin.html">
-                    <li>Administración</li>
+                <a class="dropdown-item" href="logout.php">
+                    <li><i class="fas fa-sign-out-alt"></i> Cerrar sesión</li>
                 </a>
             </ul>
         </div>
