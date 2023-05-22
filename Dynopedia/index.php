@@ -55,13 +55,18 @@ if (isset($_SESSION['pepito'])) {
                         echo $_SESSION['pepito']['nombre'];
                         echo "<i class='fas fa-caret-down'></i>";
                     } ?>
-                    
+
                 </a>
                 <a href="formulario.php">
                     <?php
                     if (!isset($_SESSION['pepito'])) {
                         echo  "<li><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</li>";
+                    } else if ($_SESSION['pepito']['rol'] == 2) {
+                        echo "<a href='admin.html'>";
+                        echo "<li>Administración</li>";
+                        echo "</a>";
                     }
+
                     ?>
                 </a>
                 <a class="dropdown-item" href="logout.php">
