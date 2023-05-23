@@ -9,26 +9,6 @@ if (isset($_SESSION['pepito'])) {
         // header('Location: ../index.php');
     }
 }
-
-// session_start();
-// // 1. Recoger los elementos del formulario de login.php
-// $email = $_POST['email'];
-
-// // 2. Importar clase Database.php
-// require_once('../Database.php');
-
-// // 3. Invocar funcion login de Database.php
-// $database = new Database();
-// $rol = $database->obtenerRolUsuario($email);
-
-
-// // 4. Comprobar contenido de la respuesta
-
-// if ($rol !== null && $rol == 2) {
-//     echo "<a href='admin.html'>";
-//     echo "<li>Administración</li>";
-//     echo "</a>";
-// }
 ?>
 
 <!DOCTYPE html>
@@ -49,29 +29,35 @@ if (isset($_SESSION['pepito'])) {
         <div class="cabecera">
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
-                <a href="#" class="username" id="dropdownMenuLink">
-                    <?php
-                    if (isset($_SESSION['pepito'])) {
-                        echo $_SESSION['pepito']['nombre'];
-                        echo "<i class='fas fa-caret-down'></i>";
-                    } ?>
+                <li>
+                    <a href="#" class="nav-link" id="dropdownMenuLink">
+                        <?php
+                        if (isset($_SESSION['pepito'])) {
+                            echo "<i class='fas fa-user-astronaut';'></i>";
+                            echo "  ";
+                            echo $_SESSION['pepito']['nombre'];
+                        } ?>
 
-                </a>
-                <a href="formulario.php">
-                    <?php
-                    if (!isset($_SESSION['pepito'])) {
-                        echo  "<li><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</li>";
-                    } else if ($_SESSION['pepito']['rol'] == 2) {
-                        echo "<a href='admin.html'>";
-                        echo "<li>Administración</li>";
-                        echo "</a>";
-                    }
-
-                    ?>
-                </a>
-                <a class="dropdown-item" href="logout.php">
-                    <li><i class="fas fa-sign-out-alt"></i> Cerrar sesión</li>
-                </a>
+                    </a>
+                </li>
+                <?php
+                if (!isset($_SESSION['pepito'])) {
+                    echo "<li>";
+                    echo "<a href='formulario.php' class='nav-link'><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</a>";
+                    echo "</li>";
+                } else if ($_SESSION['pepito']['rol'] == 2) {
+                    echo "<li>";
+                    echo "<a href='../index.php' class='nav-link'>";
+                    echo "<i class='fas fa-user-cog';'></i>";
+                    echo "  ";
+                    echo "Administracion";
+                    echo "</a>";
+                    echo "</li>";
+                }
+                ?>
+                <li>
+                    <a href="logout.php" class="nav-link"><i class="fas fa-sign-out-alt"></i> Cerrar sesion</a>
+                </li>
             </ul>
         </div>
     </header>
@@ -82,12 +68,12 @@ if (isset($_SESSION['pepito'])) {
     </h1>
     <aside>
         <ul>
-            <li><a href="dinosaurio.html">Clasificación</a>
+            <li><a href="clasificacion.php" class="nav-link">Clasificación</a>
                 <ul>
-                    <a href="dinosaurio.html#linkSaurisquios">
+                    <a href="clasificacion.php#linkSaurisquios">
                         <li> Saurisquios</li>
                     </a>
-                    <a href="dinosaurio.html#linkOrnitrisquios">
+                    <a href="clasificacion.php#linkOrnitrisquios">
                         <li>Ornitrisquios</li>
                     </a>
                 </ul>
@@ -95,34 +81,34 @@ if (isset($_SESSION['pepito'])) {
 
             <li>Era
                 <ul>
-                    <a href="era.html#cretacico">
+                    <a href="era.php#cretacico">
                         <li>Cretácico</li>
                     </a>
-                    <a href="era.html#jurasico">
+                    <a href="era.php#jurasico">
                         <li>Jurásico</li>
                     </a>
-                    <a href="era.html#triasico">
+                    <a href="era.php#triasico">
                         <li>Triásico</li>
                     </a>
                 </ul>
             </li>
             <li>Naturaleza
                 <ul>
-                    <a href="naturaleza.html#habita">
+                    <a href="naturaleza.php#habita">
                         <li>Habitas</li>
                     </a>
-                    <a href="naturaleza.html#alimentacion">
+                    <a href="naturaleza.php#alimentacion">
                         <li>Alimentación</li>
                     </a>
-                    <a href="naturaleza.html#crecimiento">
+                    <a href="naturaleza.php#crecimiento">
                         <li>Crecimiento y esperenza de vida</li>
                     </a>
                 </ul>
             </li>
-            <a href="tierlist.html">
+            <a href="tierlist.php">
                 <li>Tier list</li>
             </a>
-            <a href="recetas.html#receta">
+            <a href="recetas.php#receta">
                 <li>Recetas </li>
             </a>
             <a href="dinosaurios.php">

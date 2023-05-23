@@ -1,8 +1,4 @@
 <?php
-require_once('../Database.php');
-$db = new Database;
-$result = $db->getAll("dinosaurios_pagina");
-
 // 1. Reanudo sesion
 session_start();
 if (isset($_SESSION['pepito'])) {
@@ -15,7 +11,6 @@ if (isset($_SESSION['pepito'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,22 +20,7 @@ if (isset($_SESSION['pepito'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @import "style.css";
-        @import "tierlist.css";
-
-        aside {
-            height: 300px;
-        }
-
-        main {
-            gap: 5vw;
-            flex-wrap: wrap;
-        }
-
-        img {
-            height: 20vh;
-            width: 20vw;
-        }
+        @import url(style.css);
     </style>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
@@ -89,6 +69,11 @@ if (isset($_SESSION['pepito'])) {
             </ul>
         </div>
     </header>
+    <nav>
+    </nav>
+    <h1>
+        <p>La Dynopedia</p>
+    </h1>
     <aside>
         <ul>
             <li><a href="clasificacion.php">Clasificación</a>
@@ -137,22 +122,10 @@ if (isset($_SESSION['pepito'])) {
             <a href="dinosaurios.php">
                 <li>Dinosaurios</li>
             </a>
+
         </ul>
     </aside>
-    <main class="contenido">
-        <?php
-        while ($row = $result->fetch()) {
-
-            echo "<div>";
-            echo "<img src='img/" . $row["imagen"] . "'></img>";
-            echo "<h3> Nombre: " . $row["nombre"] . "</h3>";
-            echo "<p> Era: " . $row["era"] . "</p>";
-            echo "<p> Familia: " . $row["familia"] . "</p>";
-            echo "<p> Region: " . $row["region"] . "</p>";
-            echo "</div>";
-        }
-        ?>
-    </main>
+    <h2 id="receta">Recetas</h2><br>
 </body>
 
 </html>

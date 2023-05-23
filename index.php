@@ -8,7 +8,7 @@ if(isset($_SESSION['pepito'])){
   if($_SESSION['pepito']['rol'] == 2){
     // Correcto compañeros
   }else if($_SESSION['pepito']['rol'] == 1){
-    header('Location: Dynopedia/index.html');
+    header('Location: Dynopedia/index.php');
   }
   // }else{
   //   header('Location: ../auth/login.php');
@@ -38,7 +38,7 @@ else{
 </head>
 
 <body>
-  <h1><a href="Dynopedia/admin.html">Volver a la página web</a></h1>
+  <h1><a href="Dynopedia/index.php">Volver a la página web</a></h1>
 
   <aside>
     <h3>Índice</h3>

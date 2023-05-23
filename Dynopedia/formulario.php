@@ -1,3 +1,16 @@
+<?php
+// 1. Reanudo sesion
+session_start();
+if (isset($_SESSION['pepito'])) {
+    // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
+    if ($_SESSION['pepito']['rol'] == 1) {
+        // Correcto compañeros
+    } else if ($_SESSION['pepito']['rol'] == 2) {
+        // header('Location: ../index.php');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +30,24 @@
         <div class="cabecera">
             <img src="img/logo.png" id="logo">
             <ul class="listaNav">
-                <a href="index.php">
-                    <li>Inicio</li>
-                </a>
-                <a href="admin.html">
-                    <li>Administración</li>
-                </a>
+                <li>
+                    <a href="#" class="nav-link" id="dropdownMenuLink">
+                        <?php
+                        if (isset($_SESSION['pepito'])) {
+                            echo "<i class='fas fa-user-astronaut';'></i>";
+                            echo "  ";
+                            echo $_SESSION['pepito']['nombre'];
+                        } ?>
+
+                    </a>
+                </li>
+                <li>
+                    <a href='index.php' class='nav-link'>
+                        <i class='fas fa-home'>
+                        Inicio
+                        </i>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
