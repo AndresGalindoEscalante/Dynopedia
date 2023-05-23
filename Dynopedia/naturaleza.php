@@ -43,14 +43,9 @@ if (isset($_SESSION['pepito'])) {
                     </a>
                 </li>
                 <li>
-                    <?php
-                    if (isset($_SESSION['pepito'])) {
-                        echo "<a href='index.php' class='nav-link'>";
-                        echo "<i class='fas fa-home'></i>";
-                        echo "  ";
-                        echo "Inicio";
-                        echo "</a>";
-                    } ?>
+                    <a href='index.php' class='nav-link'>
+                        <i class='fas fa-home'></i>Inicio
+                    </a>
                 </li>
                 <li>
                     <?php
