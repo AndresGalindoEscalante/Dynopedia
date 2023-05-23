@@ -27,8 +27,8 @@ if (isset($_SESSION['pepito'])) {
 
 <body>
     <header>
-    <div class="cabecera">
-            <img src="img/logo.png" id="logo">
+        <div class="cabecera">
+            <a href="index.php"><img src="img/logo.png" id="logo"></a>
             <ul class="listaNav">
                 <li>
                     <a href="#" class="nav-link" id="dropdownMenuLink">
@@ -43,7 +43,7 @@ if (isset($_SESSION['pepito'])) {
                 </li>
                 <li>
                     <a href='index.php' class='nav-link'>
-                        <i class='fas fa-home'></i>Inicio
+                        <i class='fas fa-home'></i> Inicio
                     </a>
                 </li>
                 <li>

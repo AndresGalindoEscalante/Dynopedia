@@ -27,7 +27,7 @@ if (isset($_SESSION['pepito'])) {
 <body>
     <header>
         <div class="cabecera">
-            <img src="img/logo.png" id="logo">
+            <a href="index.php"><img src="img/logo.png" id="logo"></a>
             <ul class="listaNav">
                 <li>
                     <a href="#" class="nav-link" id="dropdownMenuLink">

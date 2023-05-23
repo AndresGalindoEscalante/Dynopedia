@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header>
         <div class="cabecera">
-            <img src="img/logo.png" id="logo">
+            <a href="index.php"><img src="img/logo.png" id="logo"></a>
             <ul class="listaNav">
                 <a href="index.php">
                     <li>Inicio</li>
@@ -287,9 +287,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             validarContrasena() &&
             validarConfirmarContraseña()) {
             document.querySelector('#enviar').disabled = false;
-            
+
             console.log(2);
-        }else{
+        } else {
             document.querySelector('#enviar').disabled = true;
 
         }

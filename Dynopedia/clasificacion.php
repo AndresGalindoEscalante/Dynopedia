@@ -31,8 +31,8 @@ if (isset($_SESSION['pepito'])) {
 <body>
 
     <header>
-    <div class="cabecera">
-            <img src="img/logo.png" id="logo">
+        <div class="cabecera">
+            <a href="index.php"><img src="img/logo.png" id="logo"></a>
             <ul class="listaNav">
                 <li>
                     <a href="#" class="nav-link" id="dropdownMenuLink">
@@ -47,7 +47,7 @@ if (isset($_SESSION['pepito'])) {
                 </li>
                 <li>
                     <a href='index.php' class='nav-link'>
-                        <i class='fas fa-home'></i>Inicio
+                        <i class='fas fa-home'></i> Inicio
                     </a>
                 </li>
                 <li>
@@ -72,28 +72,50 @@ if (isset($_SESSION['pepito'])) {
         <ul>
             <li><a href="clasificacion.php">Clasificación</a>
                 <ul>
-                    <a href="clasificacion.php#linkSaurisquios"> <li> Saurisquios</li></a>
-                   <a href="clasificacion.php#linkOrnitrisquios"> <li>Ornitrisquios</li></a>
+                    <a href="clasificacion.php#linkSaurisquios">
+                        <li> Saurisquios</li>
+                    </a>
+                    <a href="clasificacion.php#linkOrnitrisquios">
+                        <li>Ornitrisquios</li>
+                    </a>
                 </ul>
             </li>
 
             <li>Era
                 <ul>
-                    <a href="era.php#cretacico"><li>Cretácico</li></a>
-                    <a href="era.php#jurasico"><li>Jurásico</li></a>
-                    <a href="era.php#triasico"><li>Triásico</li></a>
+                    <a href="era.php#cretacico">
+                        <li>Cretácico</li>
+                    </a>
+                    <a href="era.php#jurasico">
+                        <li>Jurásico</li>
+                    </a>
+                    <a href="era.php#triasico">
+                        <li>Triásico</li>
+                    </a>
                 </ul>
             </li>
             <li>Naturaleza
                 <ul>
-                    <a href="naturaleza.php#habita"><li>Habitas</li></a>
-                    <a href="naturaleza.php#alimentacion"><li>Alimentación</li></a>
-                    <a href="naturaleza.php#crecimiento"><li>Crecimiento y esperenza de vida</li></a>
+                    <a href="naturaleza.php#habita">
+                        <li>Habitas</li>
+                    </a>
+                    <a href="naturaleza.php#alimentacion">
+                        <li>Alimentación</li>
+                    </a>
+                    <a href="naturaleza.php#crecimiento">
+                        <li>Crecimiento y esperenza de vida</li>
+                    </a>
                 </ul>
             </li>
-           <a href="tierlist.php"> <li>Tier list</li></a>
-            <a href="recetas.php#receta"><li>Recetas </li></a>
-            <a href="dinosaurios.php"><li>Dinosaurios</li></a>
+            <a href="tierlist.php">
+                <li>Tier list</li>
+            </a>
+            <a href="recetas.php#receta">
+                <li>Recetas </li>
+            </a>
+            <a href="dinosaurios.php">
+                <li>Dinosaurios</li>
+            </a>
         </ul>
     </aside>
     <main>
