@@ -21,6 +21,7 @@ if (isset($_SESSION['pepito'])) {
     <title>Document</title>
     <style>
         @import url(style.css);
+        @import url(dinosauriostyle.css);
     </style>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
@@ -66,9 +67,7 @@ if (isset($_SESSION['pepito'])) {
     </header>
     <nav>
     </nav>
-    <h1>
-        <p>La Dynopedia</p>
-    </h1>
+
     <aside>
         <ul>
             <li><a href="clasificacion.php">Clasificación</a>
@@ -82,7 +81,7 @@ if (isset($_SESSION['pepito'])) {
                 </ul>
             </li>
 
-            <li>Era
+            <li><a href="era.php">Era</a>
                 <ul>
                     <a href="era.php#cretacico">
                         <li>Cretácico</li>
@@ -95,34 +94,45 @@ if (isset($_SESSION['pepito'])) {
                     </a>
                 </ul>
             </li>
-            <li>Naturaleza
+            <li><a href="naturaleza.php">Naturaleza</a>
                 <ul>
                     <a href="naturaleza.php#habita">
-                        <li>Habitas</li>
+                        <li>Habitat</li>
                     </a>
                     <a href="naturaleza.php#alimentacion">
                         <li>Alimentación</li>
                     </a>
-                    <a href="naturaleza.php#crecimiento">
-                        <li>Crecimiento y esperenza de vida</li>
-                    </a>
+
                 </ul>
             </li>
-            <a href="tierlist.php">
-                <li>Tier list</li>
-            </a>
-            <a href="recetas.php#receta">
-                <li>Recetas </li>
-            </a>
-            <a href="dinosaurios.php">
-                <li>Dinosaurios</li>
-            </a>
+            <li> <a href="tierlist.php">Tier list</a></li>
+            <li><a href="recetas.php#receta">Recetas </a></li>
+            <li><a href="dinosaurios.php">Dinosaurios</a></li>
 
         </ul>
     </aside>
-    <h2 id="cretacico">Cretácico</h2><br>
-    <h2 id="jurasico">Jurásico</h2><br>
-    <h2 id="triasico">Triásico</h2>
+    <main>
+        <section>
+            <h1>Era</h1>
+            <section>
+                <h2 id="cretacico">Cretácico</h2>
+                <p>Se conoce como Período Cretácico o simplemente Cretácico, al período de la escala temporal geológica que culmina la Era Mesozoica
+                    (que empezó hace 252.2 millones de años y culminó hace 66 millones de años).
+                    Es el tercero después de los períodos Triásico (período inicial) y Jurásico (período intermedio).</p>
+                <section>
+                    <h2 id="jurasico">Jurásico</h2><br>
+                    <p>En la escala temporal geológica, el Período Jurásico es el segundo de los tres períodos en que se divide la Era Mesozoica
+                        (la cual empezó hace 252.2 millones de años y culminó hace 66 millones de años).
+                        Lo antecede el período Cretácico y lo sucede el Triásico.</p>
+                </section>
+                <section>
+                    <h2 id="triasico">Triásico</h2>
+                    <p>El Período Triásico es el período inicial de la era Mesozoica de la escala temporal geológica (la cual empezó hace 252.2 millones de años y culminó hace 66 millones de años).
+                        Kunto a los posteriores períodos Jurásico y Cretácico, constituyen el reinado de los dinosaurios sobre la Tierra.</p>
+                </section>
+            </section>
+        </section>
+    </main>
 </body>
 
 </html>

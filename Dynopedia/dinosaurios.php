@@ -33,13 +33,18 @@ if (isset($_SESSION['pepito'])) {
         }
 
         main {
-            gap: 5vw;
+            gap: 1vw;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 5px;
+            width: 60vw;
+            height: auto;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         img {
-            height: 20vh;
-            width: 20vw;
+            height: 15vh;
+            width: 15vw;
         }
     </style>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
@@ -97,7 +102,7 @@ if (isset($_SESSION['pepito'])) {
                 </ul>
             </li>
 
-            <li>Era
+            <li><a href="era.php">Era</a>
                 <ul>
                     <a href="era.php#cretacico">
                         <li>Cretácico</li>
@@ -110,31 +115,23 @@ if (isset($_SESSION['pepito'])) {
                     </a>
                 </ul>
             </li>
-            <li>Naturaleza
+            <li><a href="naturaleza.php">Naturaleza</a>
                 <ul>
                     <a href="naturaleza.php#habita">
-                        <li>Habitas</li>
+                        <li>Habitat</li>
                     </a>
                     <a href="naturaleza.php#alimentacion">
                         <li>Alimentación</li>
                     </a>
-                    <a href="naturaleza.php#crecimiento">
-                        <li>Crecimiento y esperenza de vida</li>
-                    </a>
+
                 </ul>
             </li>
-            <a href="tierlist.php">
-                <li>Tier list</li>
-            </a>
-            <a href="recetas.php#receta">
-                <li>Recetas </li>
-            </a>
-            <a href="dinosaurios.php">
-                <li>Dinosaurios</li>
-            </a>
+            <li> <a href="tierlist.php">Tier list</a></li>
+            <li><a href="recetas.php#receta">Recetas </a></li>
+            <li><a href="dinosaurios.php">Dinosaurios</a></li>
         </ul>
     </aside>
-    <main class="contenido">
+    <main>
         <?php
         while ($row = $result->fetch()) {
 
