@@ -3,18 +3,14 @@
 // 1. Reanudo sesion
 session_start();
 
-if(isset($_SESSION['pepito'])){
+if (isset($_SESSION['pepito'])) {
   // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
-  if($_SESSION['pepito']['rol'] == 2){
+  if ($_SESSION['pepito']['rol'] == 2) {
     // Correcto compañeros
-  }else if($_SESSION['pepito']['rol'] == 1){
+  } else if ($_SESSION['pepito']['rol'] == 1) {
     header('Location: Dynopedia/index.php');
   }
-  // }else{
-  //   header('Location: ../auth/login.php');
-  // }
-}
-else{
+} else {
   header('Location: Dynopedia/formulario.php');
 }
 
@@ -42,29 +38,17 @@ else{
 
   <aside>
     <h3>Índice</h3>
-
     <ul>
-      <a href="Dinosaurios/index.php">
-        <li>Dinosaurios</li>
-      </a>
+      <li><a href="Dinosaurios/index.php">Dinosaurios </a></li>
     </ul>
-
     <ul>
-      <a href="Familias/index.php">
-        <li>Familias</li>
-      </a>
+      <li> <a href="Familias/index.php">Familias</a></li>
     </ul>
-
     <ul>
-      <a href="Usuario/index.php">
-        <li>Usuario</li>
-      </a>
+      <li><a href="Usuario/index.php">Usuario</a></li>
     </ul>
-
     <ul>
-      <a href="Zonas/index.php">
-        <li>Zonas</li>
-      </a>
+      <li><a href="Zonas/index.php">Zonas</a></li>
     </ul>
   </aside>
 </body>

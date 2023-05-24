@@ -50,7 +50,7 @@ if (isset($_SESSION['pepito'])) {
                     if (!isset($_SESSION['pepito'])) {
                         echo "<a href='formulario.php' class='nav-link'><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</a>";
                     } else if ($_SESSION['pepito']['rol'] == 2) {
-                        echo "<a href='admin.html' class='nav-link'>";
+                        echo "<a href='../index.php' class='nav-link'>";
                         echo "<i class='fas fa-user-cog';'></i>";
                         echo "  ";
                         echo "Administracion";

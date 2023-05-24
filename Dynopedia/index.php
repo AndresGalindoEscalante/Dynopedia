@@ -1,14 +1,7 @@
 <?php
 // 1. Reanudo sesion
 session_start();
-if (isset($_SESSION['pepito'])) {
-    // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
-    if ($_SESSION['pepito']['rol'] == 1) {
-        // Correcto compañeros
-    } else if ($_SESSION['pepito']['rol'] == 2) {
-        // header('Location: ../index.php');
-    }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +101,7 @@ if (isset($_SESSION['pepito'])) {
     </aside>
     <main>
         <section id="dos">
-            <img src="img/banner.jpg" id="banner">
+            <img src="img/banner1.jpeg" id="banner">
             <div class="contenido">
                 <span>
                     <h2>Bienvenidos a la Dynopedia, mejor guia de dinosaurios del planeta.</h2>
@@ -162,9 +155,9 @@ if (isset($_SESSION['pepito'])) {
             <img src="img/larga.jpg">
         </section>
     </main>
-    <footer>
+    <!-- <footer>
         @Copyright 2022
-    </footer>
+    </footer> -->
 </body>
 
 </html>

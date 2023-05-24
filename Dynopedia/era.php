@@ -52,7 +52,7 @@ if (isset($_SESSION['pepito'])) {
                     if (!isset($_SESSION['pepito'])) {
                         echo "<a href='formulario.php' class='nav-link'><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</a>";
                     } else if ($_SESSION['pepito']['rol'] == 2) {
-                        echo "<a href='admin.html' class='nav-link'>";
+                        echo "<a href='../index.php' class='nav-link'>";
                         echo "<i class='fas fa-user-cog';'></i>";
                         echo "  ";
                         echo "Administracion";
@@ -119,16 +119,19 @@ if (isset($_SESSION['pepito'])) {
                 <p>Se conoce como Período Cretácico o simplemente Cretácico, al período de la escala temporal geológica que culmina la Era Mesozoica
                     (que empezó hace 252.2 millones de años y culminó hace 66 millones de años).
                     Es el tercero después de los períodos Triásico (período inicial) y Jurásico (período intermedio).</p>
+                <img src="img/cretacico.jpg">
                 <section>
-                    <h2 id="jurasico">Jurásico</h2><br>
+                    <h2 id="jurasico">Jurásico</h2>
                     <p>En la escala temporal geológica, el Período Jurásico es el segundo de los tres períodos en que se divide la Era Mesozoica
                         (la cual empezó hace 252.2 millones de años y culminó hace 66 millones de años).
                         Lo antecede el período Cretácico y lo sucede el Triásico.</p>
+                    <img src="img/jurasico.jpg">
                 </section>
                 <section>
                     <h2 id="triasico">Triásico</h2>
                     <p>El Período Triásico es el período inicial de la era Mesozoica de la escala temporal geológica (la cual empezó hace 252.2 millones de años y culminó hace 66 millones de años).
                         Kunto a los posteriores períodos Jurásico y Cretácico, constituyen el reinado de los dinosaurios sobre la Tierra.</p>
+                    <img src="img/triasico.jpg">
                 </section>
             </section>
         </section>

@@ -1,6 +1,6 @@
 /* Edicion de la imagen de fondo */
 body{
-    background-image:url("img/FondoFormulario.jpg");
+    background-image:url("img/fondoformulario1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

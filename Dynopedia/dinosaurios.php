@@ -5,14 +5,7 @@ $result = $db->getAll("dinosaurios_pagina");
 
 // 1. Reanudo sesion
 session_start();
-if (isset($_SESSION['pepito'])) {
-    // 2. Comprobar si tengo o no permisos (rol_id) para estar aqui
-    if ($_SESSION['pepito']['rol'] == 1) {
-        // Correcto compañeros
-    } else if ($_SESSION['pepito']['rol'] == 2) {
-        // header('Location: ../index.php');
-    }
-}
+
 ?>
 
 
@@ -43,8 +36,8 @@ if (isset($_SESSION['pepito'])) {
         }
 
         img {
-            height: 15vh;
-            width: 15vw;
+            height: 20vh;
+            width: 20vw;
         }
     </style>
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
@@ -76,13 +69,12 @@ if (isset($_SESSION['pepito'])) {
                     if (!isset($_SESSION['pepito'])) {
                         echo "<a href='formulario.php' class='nav-link'><i class='fas fa-sign-in-alt'></i> Iniciar Sesión</a>";
                     } else if ($_SESSION['pepito']['rol'] == 2) {
-                        echo "<a href='admin.html' class='nav-link'>";
+                        echo "<a href='../index.php' class='nav-link'>";
                         echo "<i class='fas fa-user-cog';'></i>";
                         echo "  ";
                         echo "Administracion";
                         echo "</a>";
                     }
-
                     ?>
 
                 </li>
@@ -101,7 +93,6 @@ if (isset($_SESSION['pepito'])) {
                     </a>
                 </ul>
             </li>
-
             <li><a href="era.php">Era</a>
                 <ul>
                     <a href="era.php#cretacico">
@@ -134,7 +125,6 @@ if (isset($_SESSION['pepito'])) {
     <main>
         <?php
         while ($row = $result->fetch()) {
-
             echo "<div>";
             echo "<img src='img/" . $row["imagen"] . "'></img>";
             echo "<h3> Nombre: " . $row["nombre"] . "</h3>";
