@@ -1,7 +1,7 @@
 <?php
 require_once('../Database.php');
 $db = new Database;
-$result = $db->getAll("zonas");
+$result = $db->getAll("16_zonas");
 ?>
 
 
@@ -42,7 +42,7 @@ $result = $db->getAll("zonas");
       echo "<td>" . $row["region"] . "</td>";
       echo "<td>";
       echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class='actualizar'>Actualizar</button></a>";
-      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Zonas/index.php&tabla=zonas'><button class='borrar'>Borrar</button></a>";
+      echo " <a href='../Delete.php?id=" . $row["id"] . "&pagina=Zonas/index.php&tabla=16_zonas'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }

@@ -155,9 +155,9 @@ session_start();
             <img src="img/larga.jpg">
         </section>
     </main>
-    <!-- <footer>
+    <footer>
         @Copyright 2022
-    </footer> -->
+    </footer>
 </body>
 
 </html>

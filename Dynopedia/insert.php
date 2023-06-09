@@ -26,7 +26,7 @@ class Insert
     public function insertar($nombre, $apellido, $email, $contrasena)
     {
         // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
-        $sql = "INSERT INTO usuario VALUES(null, :nombre, :apellido, :email, :contrasena, 1)";
+        $sql = "INSERT INTO 16_usuario VALUES(null, :nombre, :apellido, :email, :contrasena, 1)";
         $conexion = self::conectar();
         $stmt = $conexion->prepare($sql);
         $stmt->bindParam(':nombre', $nombre);

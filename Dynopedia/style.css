@@ -280,7 +280,7 @@ p{
     }
 
     #tres {
-        margin-left: -100px;
+       display: none;
     }
 
     #tres img {

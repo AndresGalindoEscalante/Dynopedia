@@ -5,16 +5,16 @@ class Insert
     public function conectar()
     {
         $driver = "mysql";
-        $host = 'localhost';
+        $host = 'mysql-5706.dinaserver.com';
         $port = '3306';
-        $bd = 'dynopedia';
+        $bd = 'tfg2022imf';
         $user = 'root';
         $password = '';
 
-        $dsn = "$driver:dbname=$bd;host=$host;port=$port";
+        $dsn = "$driver:host=$host;port=$port;dbname=$bd";
         $gbd = null;
         try {
-            $gbd = new PDO($dsn, $user, $password);
+            $gbd = new PDO($dsn, 'admintfg22', 'Morcilla01.');
             //   echo 'Conectado correctamente'."<br>";
         } catch (PDOException $e) {
             //    echo 'fallo la conexion: ' . $e->getMessage()."<br>";;
@@ -25,7 +25,7 @@ class Insert
     public function insertar($nombre, $apellido, $correo, $contrasena, $rol)
     {
         // Esta es la consulta sql que inserta en la base de datos segun los id que se les pase por parametro
-        $sql = "INSERT INTO usuario VALUES(null, :nombre, :apellido, :correo, :contrasena, :rol)";
+        $sql = "INSERT INTO 16_usuario VALUES(null, :nombre, :apellido, :correo, :contrasena, :rol)";
 
         $conexion = self::conectar();
         $stmt = $conexion->prepare($sql);

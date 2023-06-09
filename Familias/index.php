@@ -1,7 +1,7 @@
 <?php
 require_once('../Database.php');
 $db = new Database;
-$result = $db->getAll("familias");
+$result = $db->getAll("16_familias");
 ?>
 
 
@@ -38,7 +38,7 @@ $result = $db->getAll("familias");
       echo "<td>" . $row["nombre"] . "</td>";
       echo "<td>";
       echo " <a href='FormularioUpdate.php?id=".$row["id"]."'><button class='actualizar'>Actualizar</button></a>";
-      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Familias/index.php&tabla=familias'><button class='borrar'>Borrar</button></a>";
+      echo " <a href='../Delete.php?id=".$row["id"]."&pagina=Familias/index.php&tabla=16_familias'><button class='borrar'>Borrar</button></a>";
       echo "</td>";
       echo "</tr>";
     }
